@@ -1,3 +1,3 @@
-import StarterApp from "./StarterApp";
+import WelcomePage from "./WelcomePage";
 
-export { StarterApp };
+export { WelcomePage };

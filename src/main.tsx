@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./index.css";
 import { Layout } from "./components";
-import { StarterApp } from "./pages";
+import { WelcomePage } from "./pages";
 
 import store, { persistor } from "./redux/store";
 
@@ -18,7 +18,7 @@ createRoot(document.getElementById("root")!).render(
         <BrowserRouter>
           <Routes>
             <Route element={<Layout />}>
-              <Route path="/" element={<StarterApp />} />
+              <Route path="/" element={<WelcomePage />} />
             </Route>
           </Routes>
         </BrowserRouter>
