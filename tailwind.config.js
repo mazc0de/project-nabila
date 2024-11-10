@@ -14,9 +14,9 @@ export default {
         },
         extend: {
             backgroundImage: {
-                'title-page__tablet': "url('./src/assets/images/background/title_page_tablet.jpg')",
-                'title-page__phone': "url('./src/assets/images/background/title_page_phone.jpg')",
-                'main-menu': "url('./src/assets/images/background/main-menu.jpg')",
+                'title-page__tablet': "url('/src/assets/images/background/title_page_tablet.jpg')",
+                'title-page__phone': "url('/src/assets/images/background/title_page_phone.jpg')",
+                'main-menu': "url('/src/assets/images/background/main-menu.jpg')",
             },
             fontFamily: {
                 copyduck: ['Copyduck', 'sans-serif'],
