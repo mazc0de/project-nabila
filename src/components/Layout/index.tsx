@@ -32,7 +32,9 @@ const Layout = () => {
       <div className="flex h-screen w-full flex-col items-center justify-center bg-black tablet:hidden">
         <div className="phone"></div>
         <div className="mt-10">
-          <p className="text-white">Please rotate your device!</p>
+          <p className="mx-14 text-center text-white">
+            Please rotate your device or use a laptop for a better experience!
+          </p>
         </div>
       </div>
       <div className="hidden tablet:block">
