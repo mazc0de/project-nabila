@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./index.css";
 import { Layout } from "./components";
-import { WelcomePage } from "./pages";
+import { MainMenu, WelcomePage } from "./pages";
 
 import store, { persistor } from "./redux/store";
 
@@ -19,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<WelcomePage />} />
+              <Route path="/main-menu" element={<MainMenu />} />
             </Route>
           </Routes>
         </BrowserRouter>

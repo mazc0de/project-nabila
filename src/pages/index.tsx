@@ -1,3 +1,4 @@
+import MainMenu from "./MainMenu";
 import WelcomePage from "./WelcomePage";
 
-export { WelcomePage };
+export { MainMenu, WelcomePage };

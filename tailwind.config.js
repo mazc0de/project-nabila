@@ -15,9 +15,16 @@ export default {
         extend: {
             backgroundImage: {
                 'title-page': "url('./src/assets/images/background/title_page.png')",
+                'main-menu': "url('./src/assets/images/background/main-menu.jpg')",
             },
             fontFamily: {
                 copyduck: ['Copyduck', 'sans-serif'],
+            },
+            colors: {
+                'off-white': {
+                    100: '#FDFCF4',
+                    200: '#FAE6DA',
+                },
             },
         },
     },

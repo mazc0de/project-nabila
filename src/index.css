@@ -38,3 +38,7 @@
     transform: translateY(10px);
   }
 }
+
+.shadow-card {
+  box-shadow: 8px 10px #fae6da;
+}

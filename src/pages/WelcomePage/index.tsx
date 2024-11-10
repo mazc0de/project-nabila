@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { icons } from "../../constant/icons";
 import { images } from "../../constant/images";
 
@@ -15,11 +16,13 @@ const WelcomePage = () => {
         <span className="text-[#FFD2D6]">Application</span>{" "}
         <span className="text-[#FED38E]">Learning</span>
       </p>
-      <img
-        src={icons.PLAY_BUTTON}
-        alt="play-button-icon"
-        className="w-32 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 tablet:w-44 laptop:w-60"
-      />
+      <Link to="/main-menu">
+        <img
+          src={icons.PLAY_BUTTON}
+          alt="play-button-icon"
+          className="w-32 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 tablet:w-44 laptop:w-60"
+        />
+      </Link>
     </div>
   );
 };
