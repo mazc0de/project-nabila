@@ -4,7 +4,7 @@ import { images } from "../../constant/images";
 
 const WelcomePage = () => {
   return (
-    <div className="bg-title-page__phone tablet:bg-title-page__tablet relative flex h-screen w-full flex-col items-center justify-center bg-cover bg-top laptop:bg-center">
+    <div className="relative flex h-screen w-full flex-col items-center justify-center bg-welcome-page bg-cover bg-top laptop:bg-center">
       <div className="mt-4">
         <img
           src={images.STAR_LOGO}
@@ -18,7 +18,7 @@ const WelcomePage = () => {
         <span className="text-[#FFD2D6]">Application</span>{" "}
         <span className="text-[#FED38E]">Learning</span>
       </p> */}
-      <Link to="/#">
+      <Link to="/main-menu">
         <img
           src={icons.PLAY_BUTTON}
           alt="play-button-icon"

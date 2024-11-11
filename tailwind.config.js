@@ -14,12 +14,12 @@ export default {
         },
         extend: {
             backgroundImage: {
-                'title-page__tablet': "url('/src/assets/images/background/title_page_tablet.jpg')",
-                'title-page__phone': "url('/src/assets/images/background/title_page_phone.jpg')",
+                'welcome-page': "url('/src/assets/images/background/welcome-page.jpg')",
                 'main-menu': "url('/src/assets/images/background/main-menu.jpg')",
             },
             fontFamily: {
                 copyduck: ['Copyduck', 'sans-serif'],
+                'moresugar-regular': ['Moresugar', 'sans-serif'],
             },
             colors: {
                 'off-white': {
