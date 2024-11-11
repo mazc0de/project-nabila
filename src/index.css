@@ -7,6 +7,10 @@
     font-family: "Copyduck";
     src: url(/src/assets/fonts/Copyduck.ttf) format("truetype");
   }
+  @font-face {
+    font-family: "Moresugar";
+    src: url(/src/assets/fonts/MoreSugar-Regular.ttf) format("truetype");
+  }
 }
 
 .phone {
