@@ -25,7 +25,7 @@ const Layout = () => {
 
   return (
     <>
-      <audio ref={audioRef} src="/public/backsound.mp3" loop className="hidden">
+      <audio ref={audioRef} src="/backsound.mp3" loop className="hidden">
         Your browser does not support the audio element.
       </audio>
 
