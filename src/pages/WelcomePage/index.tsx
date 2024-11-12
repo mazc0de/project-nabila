@@ -20,7 +20,7 @@ const WelcomePage = () => {
       </p> */}
       <Link to="/main-menu">
         <img
-          src={icons.PLAY_BUTTON}
+          src={icons.BUTTON_PLAY}
           alt="play-button-icon"
           className="w-32 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 tablet:w-44 laptop:w-60"
         />

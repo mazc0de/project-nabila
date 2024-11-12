@@ -16,10 +16,11 @@ export default {
             backgroundImage: {
                 'welcome-page': "url('/src/assets/images/background/welcome-page.jpg')",
                 'main-menu': "url('/src/assets/images/background/main-menu.jpg')",
+                'material-definition': "url('/src/assets/images/background/material-definition.jpg')",
+                'generic-structure': "url('/src/assets/images/background/generic-structure.jpg')",
             },
             fontFamily: {
-                copyduck: ['Copyduck', 'sans-serif'],
-                'moresugar-regular': ['Moresugar', 'sans-serif'],
+                moreSugar: ['MoreSugar', 'sans-serif'],
             },
             colors: {
                 'off-white': {
