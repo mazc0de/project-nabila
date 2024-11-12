@@ -7,7 +7,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./index.css";
 import { Layout } from "./components";
-import { GenericStructure, MainMenu, Material, WelcomePage } from "./pages";
+import {
+  GenericStructure,
+  LanguageFeatures,
+  MainMenu,
+  Material,
+  WelcomePage,
+} from "./pages";
 
 import store, { persistor } from "./redux/store";
 
@@ -24,6 +30,10 @@ createRoot(document.getElementById("root")!).render(
               <Route
                 path="/material-definition/generic-structure"
                 element={<GenericStructure />}
+              />
+              <Route
+                path="/material-definition/language-features"
+                element={<LanguageFeatures />}
               />
             </Route>
           </Routes>

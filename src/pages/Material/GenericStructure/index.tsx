@@ -5,7 +5,9 @@ const GenericStructure = () => {
   return (
     <div className="flex h-screen w-full justify-between bg-generic-structure bg-cover bg-bottom px-10 py-5">
       <div className="flex h-10 items-center gap-10">
-        <img src={icons.BUTTON_HOME} alt="home-button" className="h-9 w-10" />
+        <Link to="/main-menu">
+          <img src={icons.BUTTON_HOME} alt="home-button" className="h-9 w-10" />
+        </Link>
         <p className="font-moreSugar text-2xl font-bold">Generic Structure</p>
       </div>
       <div className="flex flex-col gap-5">
@@ -29,14 +31,14 @@ const GenericStructure = () => {
           </p>
         </div>
         <div className="flex justify-center gap-10">
-          <Link to="/main-menu">
+          <Link to="/material-definition">
             <img
               src={icons.BUTTON_PREV}
               alt="prev-button"
               className="active: button-effect-clicked h-[35px] w-[95px]"
             />
           </Link>
-          <Link to="/material-definition/generic-structure">
+          <Link to="/material-definition/language-features">
             <img
               src={icons.BUTTON_NEXT}
               alt="next-button"

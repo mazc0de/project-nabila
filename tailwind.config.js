@@ -18,6 +18,7 @@ export default {
                 'main-menu': "url('/src/assets/images/background/main-menu.jpg')",
                 'material-definition': "url('/src/assets/images/background/material-definition.jpg')",
                 'generic-structure': "url('/src/assets/images/background/generic-structure.jpg')",
+                'language-features': "url('/src/assets/images/background/language-features.jpg')",
             },
             fontFamily: {
                 moreSugar: ['MoreSugar', 'sans-serif'],
