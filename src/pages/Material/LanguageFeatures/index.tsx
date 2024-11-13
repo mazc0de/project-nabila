@@ -4,7 +4,7 @@ import { data } from "./data";
 
 const LanguageFeatures = () => {
   return (
-    <div className="bg-language-features flex h-screen w-full flex-col gap-3 bg-cover bg-bottom px-10 py-5">
+    <div className="flex h-screen w-full flex-col gap-3 bg-language-features bg-cover bg-bottom px-10 py-5">
       <div className="flex h-10 items-center justify-between">
         <Link to="/main-menu">
           <img src={icons.BUTTON_HOME} alt="home-button" className="h-9 w-10" />
@@ -44,7 +44,7 @@ const LanguageFeatures = () => {
             className="active: button-effect-clicked h-[40px] w-[115px]"
           />
         </Link>
-        <Link to="/material-definition/language-features">
+        <Link to="/material-definition/prambanan-temple">
           <img
             src={icons.BUTTON_NEXT}
             alt="next-button"

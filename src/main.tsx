@@ -12,6 +12,8 @@ import {
   LanguageFeatures,
   MainMenu,
   Material,
+  MyLovelyCat,
+  PrambananTemple,
   WelcomePage,
 } from "./pages";
 
@@ -34,6 +36,14 @@ createRoot(document.getElementById("root")!).render(
               <Route
                 path="/material-definition/language-features"
                 element={<LanguageFeatures />}
+              />
+              <Route
+                path="/material-definition/prambanan-temple"
+                element={<PrambananTemple />}
+              />
+              <Route
+                path="/material-definition/my-lovely-cat"
+                element={<MyLovelyCat />}
               />
             </Route>
           </Routes>

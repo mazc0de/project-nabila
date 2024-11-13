@@ -19,6 +19,8 @@ export default {
                 'material-definition': "url('/src/assets/images/background/material-definition.jpg')",
                 'generic-structure': "url('/src/assets/images/background/generic-structure.jpg')",
                 'language-features': "url('/src/assets/images/background/language-features.jpg')",
+                'prambanan-temple': "url('/src/assets/images/background/prambanan-temple.jpg')",
+                'my-lovely-cat': "url('/src/assets/images/background/my-lovely-cat.jpg')",
             },
             fontFamily: {
                 moreSugar: ['MoreSugar', 'sans-serif'],
