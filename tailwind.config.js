@@ -21,6 +21,8 @@ export default {
                 'language-features': "url('/src/assets/images/background/language-features.jpg')",
                 'prambanan-temple': "url('/src/assets/images/background/prambanan-temple.jpg')",
                 'my-lovely-cat': "url('/src/assets/images/background/my-lovely-cat.jpg')",
+                'quiz-menu': "url('/src/assets/images/background/quiz-menu.jpg')",
+                grass: "url('/src/assets/images/background/bg-grass.jpg')",
             },
             fontFamily: {
                 moreSugar: ['MoreSugar', 'sans-serif'],

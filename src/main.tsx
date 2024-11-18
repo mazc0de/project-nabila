@@ -12,8 +12,10 @@ import {
   LanguageFeatures,
   MainMenu,
   Material,
+  MultipleChoice,
   MyLovelyCat,
   PrambananTemple,
+  QuizMenu,
   WelcomePage,
 } from "./pages";
 
@@ -46,6 +48,11 @@ createRoot(document.getElementById("root")!).render(
                 element={<MyLovelyCat />}
               />
             </Route>
+            <Route path="/quiz-menu" element={<QuizMenu />} />
+            <Route
+              path="/quiz/multiple-choice/:id"
+              element={<MultipleChoice />}
+            />
           </Routes>
         </BrowserRouter>
       </PersistGate>

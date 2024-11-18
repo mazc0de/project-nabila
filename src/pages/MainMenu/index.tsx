@@ -17,11 +17,13 @@ const MainMenu = () => {
             className="button-effect-clicked h-36 w-36 laptop:h-52 laptop:w-52"
           />
         </Link>
-        <img
-          src={images.QUIZ_BUTTON}
-          alt="material-button"
-          className="button-effect-clicked h-36 w-36 laptop:h-52 laptop:w-52"
-        />
+        <Link to="/quiz-menu">
+          <img
+            src={images.QUIZ_BUTTON}
+            alt="material-button"
+            className="button-effect-clicked h-36 w-36 laptop:h-52 laptop:w-52"
+          />
+        </Link>
       </div>
     </div>
   );

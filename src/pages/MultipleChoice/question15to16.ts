@@ -1,0 +1,2 @@
+export const question15to16 =
+  "I have a sister named Lucy. She is ten years old. She is three years younger than me. She has short and straight hair, blue eyes, sweet smile, and chubby cheeks. She loves candies and cakes. She loathe spider because her brother once pranked her by putting a spider in her skirt when she was a kid. Lucy is very loving, kind and sharing. She always bakes cookies and shares them with her friends.";

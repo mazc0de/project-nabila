@@ -2,6 +2,8 @@ import BUTTON_PLAY from "../assets/icons/button-play.png";
 import BUTTON_NEXT from "../assets/icons/button-next.png";
 import BUTTON_PREV from "../assets/icons/button-prev.png";
 import BUTTON_HOME from "../assets/icons/button-home.png";
+import QUIZ_MULTIPLE_CHOICE from "../assets/icons/quiz-multiple-choice.png";
+import QUIZ_TRUE_OR_FALSE from "../assets/icons/quiz-true-or-false.png";
 import ROTATE_SMARTPHONE from "../assets/icons/smartphone-rotate.svg";
 
 export const icons = {
@@ -9,5 +11,7 @@ export const icons = {
   BUTTON_NEXT,
   BUTTON_PREV,
   BUTTON_HOME,
+  QUIZ_MULTIPLE_CHOICE,
+  QUIZ_TRUE_OR_FALSE,
   ROTATE_SMARTPHONE,
 };
