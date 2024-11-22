@@ -5,14 +5,11 @@ import { UserAnswerType } from "../../types";
 
 const initialState: UserAnswerType[] = [];
 
-export const userMultipleChoiceAnswerSlice = createSlice({
-  name: "userMultipleChoiceAnswer",
+export const userTrueOrFalseAnswerSlice = createSlice({
+  name: "userTrueOrFalseAnswer",
   initialState,
   reducers: {
-    saveMultipleChoiceAnswer: (
-      state,
-      action: PayloadAction<UserAnswerType>,
-    ) => {
+    saveTrueOrFalseAnswer: (state, action: PayloadAction<UserAnswerType>) => {
       const index = state.findIndex(
         (answer: any) => answer.questionId === action.payload.questionId,
       );
@@ -25,8 +22,7 @@ export const userMultipleChoiceAnswerSlice = createSlice({
   },
 });
 
-export const { saveMultipleChoiceAnswer } =
-  userMultipleChoiceAnswerSlice.actions;
-export const userMultipleChoiceAnswer = (state: RootState) =>
-  state.userMultipleChoiceAnswer;
-export default userMultipleChoiceAnswerSlice.reducer;
+export const { saveTrueOrFalseAnswer } = userTrueOrFalseAnswerSlice.actions;
+export const userTrueOrFalseAnswer = (state: RootState) =>
+  state.userTrueOrFalseAnswer;
+export default userTrueOrFalseAnswerSlice.reducer;

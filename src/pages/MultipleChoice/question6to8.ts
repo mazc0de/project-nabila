@@ -1,6 +1,6 @@
-import { PapuaWoodenHouses } from "../../types";
+import { PapuaWoodenHousesType } from "../../types";
 
-export const question6to8: PapuaWoodenHouses = {
+export const question6to8: PapuaWoodenHousesType = {
   title: "Papua Wooden Houses “Honai”",
   paragraph: {
     p1: "Papua is home Honai typical inhabited by the Dani's. Honai houses made of wood with a conical roof made of straw or reeds. Honai has a small door and no windows. Actually, the structure was built Honai narrow or small, windowless intended to withstand the cold mountains of Papua.",

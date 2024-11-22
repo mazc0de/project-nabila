@@ -3,8 +3,8 @@ import { icons } from "../../../constant/icons";
 
 const PrambananTemple = () => {
   return (
-    <div className="bg-prambanan-temple relative flex h-screen w-full items-center justify-between bg-cover bg-bottom p-5">
-      <div className="shadow-card__generic-structure relative flex h-auto w-[550px] flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+    <div className="relative flex h-screen w-full items-center justify-between bg-prambanan-temple bg-cover bg-bottom p-5">
+      <div className="shadow-card__generic-structure relative flex h-auto w-[550px] flex-col gap-1 rounded-lg bg-off-white-100 p-3">
         <p className="text-center font-moreSugar text-xl font-bold">
           Prambanan Temple
         </p>

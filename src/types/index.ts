@@ -10,19 +10,32 @@ export type QuestionType = {
   correctAnswer: string;
 };
 
-export type PapuaWoodenHousesParagraph = {
+export type PapuaWoodenHousesParagraphType = {
   p1: string;
   p2: string;
   p3: string;
   p4: string;
 };
 
-export type PapuaWoodenHouses = {
+export type PapuaWoodenHousesType = {
   title: string;
-  paragraph: PapuaWoodenHousesParagraph;
+  paragraph: PapuaWoodenHousesParagraphType;
 };
 
-export type UserMultipleChoiceAnswer = {
+export type UserAnswerType = {
   questionId: string | number;
-  userAnswer: string;
+  userAnswer: string | boolean;
+};
+
+export type ExplanatoryTextType = {
+  id: number;
+  title: string;
+  image: string;
+  description: string;
+};
+
+export type TrueOrFalseQuestionType = {
+  id: string;
+  question: string;
+  correctAnswer: boolean;
 };

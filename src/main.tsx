@@ -16,6 +16,8 @@ import {
   MyLovelyCat,
   PrambananTemple,
   QuizMenu,
+  TrueOrFalse,
+  TrueOrFalseQuiz,
   WelcomePage,
 } from "./pages";
 
@@ -52,6 +54,11 @@ createRoot(document.getElementById("root")!).render(
             <Route
               path="/quiz/multiple-choice/:id"
               element={<MultipleChoice />}
+            />
+            <Route path="/quiz/true-or-false" element={<TrueOrFalse />} />
+            <Route
+              path="/quiz/true-or-false/:id"
+              element={<TrueOrFalseQuiz />}
             />
           </Routes>
         </BrowserRouter>

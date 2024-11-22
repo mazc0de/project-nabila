@@ -4,6 +4,8 @@ import STUDENTS from "../assets/images/student.png";
 import STAR_LOGO from "../assets/images/logo/star_logo.png";
 import QUIZ_BUTTON from "../assets/images/button_quiz.png";
 import MATERIAL_BUTTON from "../assets/images/button_material.png";
+import RON_WEASLEY from "../assets/images/ron-weasley.png";
+import HARRY_POTTER from "../assets/images/harry-potter.png";
 
 export const images = {
   SCHOOL,
@@ -11,5 +13,7 @@ export const images = {
   STUDENTS,
   STAR_LOGO,
   QUIZ_BUTTON,
+  RON_WEASLEY,
+  HARRY_POTTER,
   MATERIAL_BUTTON,
 };

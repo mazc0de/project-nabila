@@ -6,6 +6,8 @@ import MyLovelyCat from "./Material/MyLovelyCat";
 import PrambananTemple from "./Material/PrambananTemple";
 import MultipleChoice from "./MultipleChoice";
 import QuizMenu from "./QuizMenu";
+import TrueOrFalse from "./TrueOrFalse";
+import TrueOrFalseQuiz from "./TrueOrFalse/TrueOrFalseQuiz";
 
 import WelcomePage from "./WelcomePage";
 
@@ -18,5 +20,7 @@ export {
   MyLovelyCat,
   QuizMenu,
   MultipleChoice,
+  TrueOrFalse,
+  TrueOrFalseQuiz,
   WelcomePage,
 };

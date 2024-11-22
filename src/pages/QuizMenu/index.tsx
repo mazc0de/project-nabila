@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { icons } from "../../constant/icons";
-import { images } from "../../constant/images";
 
 const QuizMenu = () => {
   return (
-    <div className="bg-quiz-menu relative flex h-screen w-full items-center justify-center bg-cover bg-bottom">
+    <div className="relative flex h-screen w-full items-center justify-center bg-quiz-menu bg-cover bg-bottom">
       <div>
         <Link to="/main-menu">
           <img
@@ -29,7 +28,7 @@ const QuizMenu = () => {
               </p>
             </div>
           </Link>
-          <Link to="/material-definition">
+          <Link to="/quiz/true-or-false">
             <div className="flex h-full w-full flex-col items-center justify-center gap-2">
               <img
                 src={icons.QUIZ_TRUE_OR_FALSE}

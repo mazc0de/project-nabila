@@ -3,13 +3,13 @@ import { icons } from "../../../constant/icons";
 
 const MyLovelyCat = () => {
   return (
-    <div className="bg-my-lovely-cat flex h-screen w-full items-center justify-between bg-cover bg-bottom p-5">
+    <div className="flex h-screen w-full items-center justify-between bg-my-lovely-cat bg-cover bg-bottom p-5">
       <div className="self-start">
         <Link to="/main-menu">
           <img src={icons.BUTTON_HOME} alt="home-button" className="h-9 w-10" />
         </Link>
       </div>
-      <div className="shadow-card__generic-structure relative flex h-auto w-[550px] flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+      <div className="shadow-card__generic-structure relative flex h-auto w-[550px] flex-col gap-1 rounded-lg bg-off-white-100 p-3">
         <p className="text-center font-moreSugar text-xl font-bold">
           My Lovely Cat, Bebe
         </p>

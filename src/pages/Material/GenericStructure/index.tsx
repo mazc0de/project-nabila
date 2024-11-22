@@ -11,7 +11,7 @@ const GenericStructure = () => {
         <p className="font-moreSugar text-2xl font-bold">Generic Structure</p>
       </div>
       <div className="flex flex-col gap-5">
-        <div className="shadow-card__generic-structure flex h-auto w-96 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+        <div className="shadow-card__generic-structure flex h-auto w-96 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
           <p className="text-center font-moreSugar text-xl font-bold">
             Identification
           </p>
@@ -20,7 +20,7 @@ const GenericStructure = () => {
             thing, place, animal, or event) intended to be described.
           </p>
         </div>
-        <div className="shadow-card__generic-structure flex h-auto w-96 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+        <div className="shadow-card__generic-structure flex h-auto w-96 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
           <p className="text-center font-moreSugar text-xl font-bold">
             Description
           </p>

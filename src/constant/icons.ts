@@ -5,8 +5,12 @@ import BUTTON_HOME from "../assets/icons/button-home.png";
 import QUIZ_MULTIPLE_CHOICE from "../assets/icons/quiz-multiple-choice.png";
 import QUIZ_TRUE_OR_FALSE from "../assets/icons/quiz-true-or-false.png";
 import ROTATE_SMARTPHONE from "../assets/icons/smartphone-rotate.svg";
+import THUMB_UP from "../assets/icons/thumb-up.svg";
+import THUMB_DOWN from "../assets/icons/thumb-down.svg";
 
 export const icons = {
+  THUMB_UP,
+  THUMB_DOWN,
   BUTTON_PLAY,
   BUTTON_NEXT,
   BUTTON_PREV,

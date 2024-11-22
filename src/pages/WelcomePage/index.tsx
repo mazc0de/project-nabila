@@ -12,12 +12,6 @@ const WelcomePage = () => {
           className="bounce-image w-96 tablet:w-[450px] laptop:w-[550px]"
         />
       </div>
-      {/* <p className="text-center font-copyduck text-lg text-red-400 tablet:text-xl">
-        <span className="text-[#8FE4CD]">Descriptive</span>{" "}
-        <span className="text-[#84DCE0]">Text</span>{" "}
-        <span className="text-[#FFD2D6]">Application</span>{" "}
-        <span className="text-[#FED38E]">Learning</span>
-      </p> */}
       <Link to="/main-menu">
         <img
           src={icons.BUTTON_PLAY}

@@ -59,7 +59,7 @@ const MultipleChoice = () => {
       Number(id) === 20 ? (
         <div className="flex h-full w-full flex-col items-center justify-center gap-5">
           <div
-            className={`shadow-card__generic-structure flex h-64 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3 ${Number(id) >= 1 && Number(id) <= 5 && "w-[450px]"} ${Number(id) === 9 && "w-[680px]"} ${Number(id) === 20 && "w-[700px]"}`}
+            className={`shadow-card__generic-structure flex h-64 flex-col gap-1 rounded-lg bg-off-white-100 p-3 ${Number(id) >= 1 && Number(id) <= 5 && "w-[450px]"} ${Number(id) === 9 && "w-[680px]"} ${Number(id) === 20 && "w-[700px]"}`}
           >
             <p className="font-moreSugar text-sm">
               <span className="font-bold">{question?.questionId}.</span>{" "}
@@ -130,7 +130,7 @@ const MultipleChoice = () => {
       {/* Question number 6-8 */}
       {Number(id) >= 6 && Number(id) <= 8 && (
         <div className="flex h-full w-full items-start justify-center gap-5 pt-10">
-          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
             <p className="font-moreSugar text-xs font-bold">
               Look at the following text to answer questions 6-8!
             </p>
@@ -148,7 +148,7 @@ const MultipleChoice = () => {
             </div>
           </div>
           <div className="flex w-1/2 flex-col gap-5">
-            <div className="shadow-card__generic-structure flex h-48 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+            <div className="shadow-card__generic-structure flex h-48 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm">
                 <span className="font-bold">{question?.questionId}. </span>
                 {question?.questionText}
@@ -212,7 +212,7 @@ const MultipleChoice = () => {
       {/* Question number 10 */}
       {Number(id) === 10 && (
         <div className="flex h-full w-full items-start justify-center gap-5 pt-10">
-          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
             <p className="font-moreSugar text-xs font-bold">
               Look at the following text to answer questions 10-11!
             </p>
@@ -223,7 +223,7 @@ const MultipleChoice = () => {
             </div>
           </div>
           <div className="flex w-1/2 flex-col gap-5">
-            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm">
                 <span className="font-bold">{question?.questionId}. </span>
                 {question?.questionText}
@@ -292,7 +292,7 @@ const MultipleChoice = () => {
       {/* Question number 11 */}
       {Number(id) === 11 && (
         <div className="flex h-full w-full items-start justify-center gap-5 pt-10">
-          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
             <p className="font-moreSugar text-xs font-bold">
               Look at the following text to answer questions 10-11!
             </p>
@@ -303,7 +303,7 @@ const MultipleChoice = () => {
             </div>
           </div>
           <div className="flex w-1/2 flex-col gap-5">
-            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm">
                 <span className="font-bold">{question?.questionId}. </span>“
                 <span className="underline">Inadequate</span> conditions can not
@@ -374,7 +374,7 @@ const MultipleChoice = () => {
       {[12, 13].includes(Number(id)) && (
         <div className="flex h-full w-full items-start justify-center gap-5 pt-10">
           <div className="flex w-1/2 flex-col gap-5">
-            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm">
                 <span className="font-bold">{question?.questionId}. </span>
                 {question?.questionText}
@@ -437,7 +437,7 @@ const MultipleChoice = () => {
               </Link>
             </div>
           </div>
-          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
             <p className="font-moreSugar text-xs font-bold">
               Look at the following text to answer questions 12-14!
             </p>
@@ -464,7 +464,7 @@ const MultipleChoice = () => {
       {Number(id) === 14 && (
         <div className="flex h-full w-full items-start justify-center gap-5 pt-10">
           <div className="flex w-1/2 flex-col gap-5">
-            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm">
                 <span className="font-bold">{question?.questionId}. </span>
                 “He dries each finger{" "}
@@ -528,7 +528,7 @@ const MultipleChoice = () => {
               </Link>
             </div>
           </div>
-          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
             <p className="font-moreSugar text-xs font-bold">
               Look at the following text to answer questions 12-14!
             </p>
@@ -554,7 +554,7 @@ const MultipleChoice = () => {
       {/* Question number 15 */}
       {Number(id) === 15 && (
         <div className="flex h-full w-full items-start justify-center gap-5 pt-10">
-          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
             <p className="font-moreSugar text-xs font-bold">
               Look at the following text to answer questions 15-16!
             </p>
@@ -565,7 +565,7 @@ const MultipleChoice = () => {
             </div>
           </div>
           <div className="flex w-1/2 flex-col gap-5">
-            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm">
                 <span className="font-bold">{question?.questionId}. </span>
                 {question?.questionText}
@@ -634,7 +634,7 @@ const MultipleChoice = () => {
       {/* Question number 16 */}
       {Number(id) === 16 && (
         <div className="flex h-full w-full items-start justify-center gap-5 pt-10">
-          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
             <p className="font-moreSugar text-xs font-bold">
               Look at the following text to answer questions 15-16!
             </p>
@@ -645,7 +645,7 @@ const MultipleChoice = () => {
             </div>
           </div>
           <div className="flex w-1/2 flex-col gap-5">
-            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm">
                 <span className="font-bold">{question?.questionId}. </span>“She{" "}
                 <span className="underline">loathe</span> spider because her
@@ -717,7 +717,7 @@ const MultipleChoice = () => {
       {Number(id) >= 17 && Number(id) <= 19 && (
         <div className="flex h-full w-full items-start justify-center gap-5 pt-10">
           <div className="flex w-1/2 flex-col gap-5">
-            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+            <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm">
                 <span className="font-bold">{question?.questionId}. </span>
                 “He dries each finger{" "}
@@ -781,7 +781,7 @@ const MultipleChoice = () => {
               </Link>
             </div>
           </div>
-          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
+          <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
             <p className="font-moreSugar text-xs font-bold">
               Look at the following text to answer questions 17-19!
             </p>

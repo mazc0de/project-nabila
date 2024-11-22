@@ -27,7 +27,7 @@ const LanguageFeatures = () => {
                   {item?.title}
                 </p>
               </div>
-              <div className="rounded-xl bg-[#FDFCF4] p-2">
+              <div className="rounded-xl bg-off-white-100 p-2">
                 <p className="text-center font-moreSugar text-sm">
                   {item?.description}
                 </p>
