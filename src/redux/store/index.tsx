@@ -1,6 +1,7 @@
 import storage from "redux-persist/lib/storage";
 import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistCombineReducers } from "redux-persist";
+import userMultipleChoiceAnswer from "../reducer/userMultipleChoiceAnswerSlice";
 
 const persistConfig = {
   key: "root",
@@ -8,7 +9,9 @@ const persistConfig = {
   blacklist: [""],
 };
 
-const persistedReducer = persistCombineReducers(persistConfig, {});
+const persistedReducer = persistCombineReducers(persistConfig, {
+  userMultipleChoiceAnswer,
+});
 
 export const store = configureStore({
   reducer: persistedReducer,

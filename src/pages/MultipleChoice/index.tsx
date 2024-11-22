@@ -9,9 +9,16 @@ import { question10to11 } from "./question10to11";
 import { question12to14 } from "./question12to14";
 import { question15to16 } from "./question15to16";
 import { question17to19 } from "./question17to19";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { saveMultipleChoiceAnswer } from "../../redux/reducer/userMultipleChoiceAnswerSlice";
 
 const MultipleChoice = () => {
   const { id } = useParams();
+  const dispatch = useAppDispatch();
+
+  const userAnswer = useAppSelector((state) => state.userMultipleChoiceAnswer);
+
   const [question, setQuestion] = useState<QuestionType>();
 
   const fetchQuestion = (id: any) => {
@@ -20,7 +27,14 @@ const MultipleChoice = () => {
         (item: QuestionType) => item.questionId === id,
       );
       setQuestion(response);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSaveMultipleChoice = (option: OptionType, questionId: any) => {
+    const answer = { questionId, userAnswer: option.id };
+    dispatch(saveMultipleChoiceAnswer(answer));
   };
 
   useEffect(() => {
@@ -58,16 +72,31 @@ const MultipleChoice = () => {
             )}
             <div className="ml-5 flex flex-col gap-1">
               {question?.options?.map((option: OptionType) => {
+                const isSelectedOption = userAnswer.some(
+                  (item) =>
+                    item.questionId === question.questionId &&
+                    item.userAnswer === option.id,
+                );
                 return (
-                  <div className="flex">
+                  <div
+                    key={option?.id}
+                    className="group flex"
+                    onClick={() =>
+                      handleSaveMultipleChoice(option, question?.questionId)
+                    }
+                  >
                     <div className="w-8">
-                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-400">
+                      <div
+                        className={`flex h-5 w-5 items-center justify-center rounded-full transition duration-300 group-hover:bg-green-400 ${isSelectedOption ? "bg-green-400" : "bg-red-400"}`}
+                      >
                         <p className="font-moreSugar text-xs leading-none text-white">
                           {option?.id}
                         </p>
                       </div>
                     </div>
-                    <div className="w-full">
+                    <div
+                      className={`w-full cursor-pointer rounded-full transition duration-300 group-hover:bg-red-400/20 ${isSelectedOption ? "bg-red-400/20" : ""}`}
+                    >
                       <p className="font-moreSugar text-xs">{option?.text}</p>
                     </div>
                   </div>
@@ -126,16 +155,31 @@ const MultipleChoice = () => {
               </p>
               <div className="ml-5 flex flex-col gap-1">
                 {question?.options?.map((option: OptionType) => {
+                  const isSelectedOption = userAnswer.some(
+                    (item) =>
+                      item.questionId === question.questionId &&
+                      item.userAnswer === option.id,
+                  );
                   return (
-                    <div className="flex">
+                    <div
+                      key={option?.id}
+                      className="group flex"
+                      onClick={() =>
+                        handleSaveMultipleChoice(option, question?.questionId)
+                      }
+                    >
                       <div className="w-8">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-400">
+                        <div
+                          className={`flex h-5 w-5 items-center justify-center rounded-full transition duration-300 group-hover:bg-green-400 ${isSelectedOption ? "bg-green-400" : "bg-red-400"}`}
+                        >
                           <p className="font-moreSugar text-xs leading-none text-white">
                             {option?.id}
                           </p>
                         </div>
                       </div>
-                      <div className="w-full">
+                      <div
+                        className={`w-full cursor-pointer rounded-full transition duration-300 group-hover:bg-red-400/20 ${isSelectedOption ? "bg-red-400/20" : ""}`}
+                      >
                         <p className="font-moreSugar text-xs">{option?.text}</p>
                       </div>
                     </div>
@@ -191,16 +235,31 @@ const MultipleChoice = () => {
               )}
               <div className="ml-5 flex flex-col gap-1">
                 {question?.options?.map((option: OptionType) => {
+                  const isSelectedOption = userAnswer.some(
+                    (item) =>
+                      item.questionId === question.questionId &&
+                      item.userAnswer === option.id,
+                  );
                   return (
-                    <div className="flex">
+                    <div
+                      key={option?.id}
+                      className="group flex"
+                      onClick={() =>
+                        handleSaveMultipleChoice(option, question?.questionId)
+                      }
+                    >
                       <div className="w-8">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-400">
+                        <div
+                          className={`flex h-5 w-5 items-center justify-center rounded-full transition duration-300 group-hover:bg-green-400 ${isSelectedOption ? "bg-green-400" : "bg-red-400"}`}
+                        >
                           <p className="font-moreSugar text-xs leading-none text-white">
                             {option?.id}
                           </p>
                         </div>
                       </div>
-                      <div className="w-full">
+                      <div
+                        className={`w-full cursor-pointer rounded-full transition duration-300 group-hover:bg-red-400/20 ${isSelectedOption ? "bg-red-400/20" : ""}`}
+                      >
                         <p className="font-moreSugar text-xs">{option?.text}</p>
                       </div>
                     </div>
@@ -257,16 +316,31 @@ const MultipleChoice = () => {
               )}
               <div className="ml-5 flex flex-col gap-1">
                 {question?.options?.map((option: OptionType) => {
+                  const isSelectedOption = userAnswer.some(
+                    (item) =>
+                      item.questionId === question.questionId &&
+                      item.userAnswer === option.id,
+                  );
                   return (
-                    <div className="flex">
+                    <div
+                      key={option?.id}
+                      className="group flex"
+                      onClick={() =>
+                        handleSaveMultipleChoice(option, question?.questionId)
+                      }
+                    >
                       <div className="w-8">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-400">
+                        <div
+                          className={`flex h-5 w-5 items-center justify-center rounded-full transition duration-300 group-hover:bg-green-400 ${isSelectedOption ? "bg-green-400" : "bg-red-400"}`}
+                        >
                           <p className="font-moreSugar text-xs leading-none text-white">
                             {option?.id}
                           </p>
                         </div>
                       </div>
-                      <div className="w-full">
+                      <div
+                        className={`w-full cursor-pointer rounded-full transition duration-300 group-hover:bg-red-400/20 ${isSelectedOption ? "bg-red-400/20" : ""}`}
+                      >
                         <p className="font-moreSugar text-xs">{option?.text}</p>
                       </div>
                     </div>
@@ -312,16 +386,31 @@ const MultipleChoice = () => {
               )}
               <div className="ml-5 flex flex-col gap-1">
                 {question?.options?.map((option: OptionType) => {
+                  const isSelectedOption = userAnswer.some(
+                    (item) =>
+                      item.questionId === question.questionId &&
+                      item.userAnswer === option.id,
+                  );
                   return (
-                    <div className="flex">
+                    <div
+                      key={option?.id}
+                      className="group flex"
+                      onClick={() =>
+                        handleSaveMultipleChoice(option, question?.questionId)
+                      }
+                    >
                       <div className="w-8">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-400">
+                        <div
+                          className={`flex h-5 w-5 items-center justify-center rounded-full transition duration-300 group-hover:bg-green-400 ${isSelectedOption ? "bg-green-400" : "bg-red-400"}`}
+                        >
                           <p className="font-moreSugar text-xs leading-none text-white">
                             {option?.id}
                           </p>
                         </div>
                       </div>
-                      <div className="w-full">
+                      <div
+                        className={`w-full cursor-pointer rounded-full transition duration-300 group-hover:bg-red-400/20 ${isSelectedOption ? "bg-red-400/20" : ""}`}
+                      >
                         <p className="font-moreSugar text-xs">{option?.text}</p>
                       </div>
                     </div>
@@ -388,16 +477,31 @@ const MultipleChoice = () => {
               )}
               <div className="ml-5 flex flex-col gap-1">
                 {question?.options?.map((option: OptionType) => {
+                  const isSelectedOption = userAnswer.some(
+                    (item) =>
+                      item.questionId === question.questionId &&
+                      item.userAnswer === option.id,
+                  );
                   return (
-                    <div className="flex">
+                    <div
+                      key={option?.id}
+                      className="group flex"
+                      onClick={() =>
+                        handleSaveMultipleChoice(option, question?.questionId)
+                      }
+                    >
                       <div className="w-8">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-400">
+                        <div
+                          className={`flex h-5 w-5 items-center justify-center rounded-full transition duration-300 group-hover:bg-green-400 ${isSelectedOption ? "bg-green-400" : "bg-red-400"}`}
+                        >
                           <p className="font-moreSugar text-xs leading-none text-white">
                             {option?.id}
                           </p>
                         </div>
                       </div>
-                      <div className="w-full">
+                      <div
+                        className={`w-full cursor-pointer rounded-full transition duration-300 group-hover:bg-red-400/20 ${isSelectedOption ? "bg-red-400/20" : ""}`}
+                      >
                         <p className="font-moreSugar text-xs">{option?.text}</p>
                       </div>
                     </div>
@@ -473,16 +577,31 @@ const MultipleChoice = () => {
               )}
               <div className="ml-5 flex flex-col gap-1">
                 {question?.options?.map((option: OptionType) => {
+                  const isSelectedOption = userAnswer.some(
+                    (item) =>
+                      item.questionId === question.questionId &&
+                      item.userAnswer === option.id,
+                  );
                   return (
-                    <div className="flex">
+                    <div
+                      key={option?.id}
+                      className="group flex"
+                      onClick={() =>
+                        handleSaveMultipleChoice(option, question?.questionId)
+                      }
+                    >
                       <div className="w-8">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-400">
+                        <div
+                          className={`flex h-5 w-5 items-center justify-center rounded-full transition duration-300 group-hover:bg-green-400 ${isSelectedOption ? "bg-green-400" : "bg-red-400"}`}
+                        >
                           <p className="font-moreSugar text-xs leading-none text-white">
                             {option?.id}
                           </p>
                         </div>
                       </div>
-                      <div className="w-full">
+                      <div
+                        className={`w-full cursor-pointer rounded-full transition duration-300 group-hover:bg-red-400/20 ${isSelectedOption ? "bg-red-400/20" : ""}`}
+                      >
                         <p className="font-moreSugar text-xs">{option?.text}</p>
                       </div>
                     </div>
@@ -528,10 +647,10 @@ const MultipleChoice = () => {
           <div className="flex w-1/2 flex-col gap-5">
             <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-[#FDFCF4] p-3">
               <p className="font-moreSugar text-sm">
-                <span className="font-bold">{question?.questionId}. </span>“
-                <span className="underline">xxx</span> “She loathe spider
-                because her brother once pranked her by putting a spider in her
-                skirt when she was a kid.”
+                <span className="font-bold">{question?.questionId}. </span>“She{" "}
+                <span className="underline">loathe</span> spider because her
+                brother once pranked her by putting a spider in her skirt when
+                she was a kid.”
               </p>
               {question?.descriptionText?.length !== 0 && (
                 <p className="font-moreSugar text-sm">
@@ -540,16 +659,31 @@ const MultipleChoice = () => {
               )}
               <div className="ml-5 flex flex-col gap-1">
                 {question?.options?.map((option: OptionType) => {
+                  const isSelectedOption = userAnswer.some(
+                    (item) =>
+                      item.questionId === question.questionId &&
+                      item.userAnswer === option.id,
+                  );
                   return (
-                    <div className="flex">
+                    <div
+                      key={option?.id}
+                      className="group flex"
+                      onClick={() =>
+                        handleSaveMultipleChoice(option, question?.questionId)
+                      }
+                    >
                       <div className="w-8">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-400">
+                        <div
+                          className={`flex h-5 w-5 items-center justify-center rounded-full transition duration-300 group-hover:bg-green-400 ${isSelectedOption ? "bg-green-400" : "bg-red-400"}`}
+                        >
                           <p className="font-moreSugar text-xs leading-none text-white">
                             {option?.id}
                           </p>
                         </div>
                       </div>
-                      <div className="w-full">
+                      <div
+                        className={`w-full cursor-pointer rounded-full transition duration-300 group-hover:bg-red-400/20 ${isSelectedOption ? "bg-red-400/20" : ""}`}
+                      >
                         <p className="font-moreSugar text-xs">{option?.text}</p>
                       </div>
                     </div>
@@ -596,16 +730,31 @@ const MultipleChoice = () => {
               )}
               <div className="ml-5 flex flex-col gap-1">
                 {question?.options?.map((option: OptionType) => {
+                  const isSelectedOption = userAnswer.some(
+                    (item) =>
+                      item.questionId === question.questionId &&
+                      item.userAnswer === option.id,
+                  );
                   return (
-                    <div className="flex">
+                    <div
+                      key={option?.id}
+                      className="group flex"
+                      onClick={() =>
+                        handleSaveMultipleChoice(option, question?.questionId)
+                      }
+                    >
                       <div className="w-8">
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-400">
+                        <div
+                          className={`flex h-5 w-5 items-center justify-center rounded-full transition duration-300 group-hover:bg-green-400 ${isSelectedOption ? "bg-green-400" : "bg-red-400"}`}
+                        >
                           <p className="font-moreSugar text-xs leading-none text-white">
                             {option?.id}
                           </p>
                         </div>
                       </div>
-                      <div className="w-full">
+                      <div
+                        className={`w-full cursor-pointer rounded-full transition duration-300 group-hover:bg-red-400/20 ${isSelectedOption ? "bg-red-400/20" : ""}`}
+                      >
                         <p className="font-moreSugar text-xs">{option?.text}</p>
                       </div>
                     </div>

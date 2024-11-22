@@ -21,3 +21,8 @@ export type PapuaWoodenHouses = {
   title: string;
   paragraph: PapuaWoodenHousesParagraph;
 };
+
+export type UserMultipleChoiceAnswer = {
+  questionId: string | number;
+  userAnswer: string;
+};
