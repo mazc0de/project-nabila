@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistCombineReducers } from "redux-persist";
 import userMultipleChoiceAnswer from "../reducer/userMultipleChoiceAnswerSlice";
 import userTrueOrFalseAnswer from "../reducer/userTrueOrFalseAnswerSlice";
+import user from "../reducer/userSlice";
 
 const persistConfig = {
   key: "root",
@@ -13,6 +14,7 @@ const persistConfig = {
 const persistedReducer = persistCombineReducers(persistConfig, {
   userMultipleChoiceAnswer,
   userTrueOrFalseAnswer,
+  user,
 });
 
 export const store = configureStore({

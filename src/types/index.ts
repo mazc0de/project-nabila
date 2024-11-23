@@ -39,3 +39,9 @@ export type TrueOrFalseQuestionType = {
   question: string;
   correctAnswer: boolean;
 };
+
+export type UserType = {
+  name: string;
+  multipleChoiceValue: number;
+  TrueOrFalseValue: number;
+};

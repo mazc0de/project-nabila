@@ -3,17 +3,17 @@ module.exports = {
     darkMode: ['class'],
     content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
     theme: {
-        screens: {
-            phone: '640px',
-            // => @media (min-width: 640px) { ... }
-            tablet: '640px',
-            // => @media (min-width: 640px) { ... }
-            laptop: '1024px',
-            // => @media (min-width: 1024px) { ... }
-            desktop: '1280px',
-            // => @media (min-width: 1280px) { ... }
-        },
         extend: {
+            screens: {
+                phone: '640px',
+                // => @media (min-width: 640px) { ... }
+                tablet: '640px',
+                // => @media (min-width: 640px) { ... }
+                laptop: '1024px',
+                // => @media (min-width: 1024px) { ... }
+                desktop: '1280px',
+                // => @media (min-width: 1280px) { ... }
+            },
             backgroundImage: {
                 'welcome-page': "url('/src/assets/images/background/welcome-page.jpg')",
                 'main-menu': "url('/src/assets/images/background/main-menu.jpg')",
