@@ -114,10 +114,18 @@ const MultipleChoice = () => {
                 />
               </Link>
             )}
-            {Number(id) !== 20 && (
+            {Number(id) !== 20 ? (
               <Link to={`/quiz/multiple-choice/${Number(id) + 1}`}>
                 <img
                   src={icons.BUTTON_NEXT}
+                  alt="next-button"
+                  className="button-effect-clicked h-[35px] w-[95px]"
+                />
+              </Link>
+            ) : (
+              <Link to={`/quiz/multiple-choice/${Number(id) + 1}`}>
+                <img
+                  src={icons.BUTTON_FINISH}
                   alt="next-button"
                   className="button-effect-clicked h-[35px] w-[95px]"
                 />

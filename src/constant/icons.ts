@@ -1,6 +1,7 @@
 import BUTTON_PLAY from "../assets/icons/button-play.png";
 import BUTTON_NEXT from "../assets/icons/button-next.png";
 import BUTTON_PREV from "../assets/icons/button-prev.png";
+import BUTTON_FINISH from "../assets/icons/button-finish.png";
 import BUTTON_HOME from "../assets/icons/button-home.png";
 import QUIZ_MULTIPLE_CHOICE from "../assets/icons/quiz-multiple-choice.png";
 import QUIZ_TRUE_OR_FALSE from "../assets/icons/quiz-true-or-false.png";
@@ -13,6 +14,7 @@ export const icons = {
   THUMB_DOWN,
   BUTTON_PLAY,
   BUTTON_NEXT,
+  BUTTON_FINISH,
   BUTTON_PREV,
   BUTTON_HOME,
   QUIZ_MULTIPLE_CHOICE,
