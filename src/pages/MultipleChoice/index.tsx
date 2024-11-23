@@ -53,7 +53,7 @@ const MultipleChoice = () => {
         </Link>
       </div>
 
-      {/* Question number 1-5 and 9 */}
+      {/* Question number 1-5 and 9,20 */}
       {(Number(id) >= 1 && Number(id) <= 5) ||
       Number(id) === 9 ||
       Number(id) === 20 ? (
@@ -720,8 +720,7 @@ const MultipleChoice = () => {
             <div className="shadow-card__generic-structure flex h-52 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm">
                 <span className="font-bold">{question?.questionId}. </span>
-                “He dries each finger{" "}
-                <span className="underline">separately</span>...”
+                {question?.questionText}
               </p>
               {question?.descriptionText?.length !== 0 && (
                 <p className="font-moreSugar text-sm">
