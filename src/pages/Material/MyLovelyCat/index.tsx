@@ -11,7 +11,7 @@ const MyLovelyCat = () => {
       </div>
       <div className="shadow-card__generic-structure relative flex h-auto w-[550px] flex-col gap-1 rounded-lg bg-off-white-100 p-3">
         <p className="text-center font-moreSugar text-xl font-bold">
-          My Lovely Cat, Bebe
+          Example 2 : My Lovely Cat, Bebe
         </p>
         <p className="indent-5 font-moreSugar text-sm">
           My mother bought me a present I’ve wanted for years. It’s a cat. A
@@ -35,13 +35,6 @@ const MyLovelyCat = () => {
               src={icons.BUTTON_PREV}
               alt="prev-button"
               className="active: button-effect-clicked h-[40px] w-[115px]"
-            />
-          </Link>
-          <Link to="/material-definition/my-lovely-cat">
-            <img
-              src={icons.BUTTON_NEXT}
-              alt="next-button"
-              className="button-effect-clicked h-[40px] w-[115px]"
             />
           </Link>
         </div>

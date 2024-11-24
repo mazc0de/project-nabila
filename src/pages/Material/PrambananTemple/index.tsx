@@ -6,7 +6,7 @@ const PrambananTemple = () => {
     <div className="relative flex h-screen w-full items-center justify-between bg-prambanan-temple bg-cover bg-bottom p-5">
       <div className="shadow-card__generic-structure relative flex h-auto w-[550px] flex-col gap-1 rounded-lg bg-off-white-100 p-3">
         <p className="text-center font-moreSugar text-xl font-bold">
-          Prambanan Temple
+          Example 1 : Prambanan Temple
         </p>
         <p className="indent-5 font-moreSugar text-sm">
           Prambanan the second largest Hindu temple in Indonesia after
