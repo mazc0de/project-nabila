@@ -19,10 +19,14 @@ export const userTrueOrFalseAnswerSlice = createSlice({
         state.push(action.payload);
       }
     },
+    resetTrueOrFalseAnswer: () => {
+      return initialState;
+    },
   },
 });
 
-export const { saveTrueOrFalseAnswer } = userTrueOrFalseAnswerSlice.actions;
+export const { saveTrueOrFalseAnswer, resetTrueOrFalseAnswer } =
+  userTrueOrFalseAnswerSlice.actions;
 export const userTrueOrFalseAnswer = (state: RootState) =>
   state.userTrueOrFalseAnswer;
 export default userTrueOrFalseAnswerSlice.reducer;

@@ -20,6 +20,7 @@ import {
   TrueOrFalseQuiz,
   WelcomePage,
   MultipleChoiceResult,
+  TrueOrFalseResult,
 } from "./pages";
 
 import store, { persistor } from "./redux/store";
@@ -64,6 +65,10 @@ createRoot(document.getElementById("root")!).render(
             <Route
               path="/quiz/true-or-false/:id"
               element={<TrueOrFalseQuiz />}
+            />
+            <Route
+              path="/quiz/true-or-false/result"
+              element={<TrueOrFalseResult />}
             />
           </Routes>
         </BrowserRouter>

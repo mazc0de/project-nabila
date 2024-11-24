@@ -9,10 +9,12 @@ import MultipleChoiceResult from "./MultipleChoice/MultipleChoiceResult";
 import QuizMenu from "./QuizMenu";
 import TrueOrFalse from "./TrueOrFalse";
 import TrueOrFalseQuiz from "./TrueOrFalse/TrueOrFalseQuiz";
+import TrueOrFalseResult from "./TrueOrFalse/TrueOrFalseResult";
 
 import WelcomePage from "./WelcomePage";
 
 export {
+  TrueOrFalseResult,
   MainMenu,
   Material,
   GenericStructure,
