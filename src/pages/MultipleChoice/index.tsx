@@ -1,25 +1,39 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { icons } from "../../constant/icons";
 import { OptionType, QuestionType } from "../../types";
+
 import { question6to8 } from "./question6to8";
 import { multipleChoiceQuestion } from "./multipleChoiceQuestion";
 import { question10to11 } from "./question10to11";
 import { question12to14 } from "./question12to14";
 import { question15to16 } from "./question15to16";
 import { question17to19 } from "./question17to19";
+
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { saveMultipleChoiceAnswer } from "../../redux/reducer/userMultipleChoiceAnswerSlice";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+
 const MultipleChoice = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const userAnswer = useAppSelector((state) => state.userMultipleChoiceAnswer);
 
   const [question, setQuestion] = useState<QuestionType>();
+  const [openDialog, setOpenDialog] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const fetchQuestion = (id: any) => {
     try {
@@ -37,12 +51,50 @@ const MultipleChoice = () => {
     dispatch(saveMultipleChoiceAnswer(answer));
   };
 
+  const handleFinishDialog = () => {
+    setOpenDialog(true);
+  };
+
+  const handleFinish = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setOpenDialog(false);
+      setLoading(false);
+      navigate("/quiz/multiple-choice/result");
+    }, 1000);
+  };
+
   useEffect(() => {
     fetchQuestion(id);
   }, [id]);
 
   return (
     <div className="relative flex h-screen w-full bg-grass bg-cover bg-bottom p-5">
+      <Dialog open={openDialog}>
+        <DialogContent className="shadow-card__generic-structure w-full bg-off-white-100 [&>button]:hidden">
+          <DialogHeader className="">
+            <DialogTitle className="text-center font-moreSugar">
+              Are you sure you want to end the quiz?
+            </DialogTitle>
+            <DialogDescription>
+              <div className="flex justify-center gap-5">
+                <Button
+                  loading={loading}
+                  className="w-24 bg-mint-green hover:bg-mint-green/90 active:bg-mint-green"
+                  onClick={handleFinish}
+                  loadingColor="text-green-500"
+                >
+                  Yes
+                </Button>
+
+                <Button className="w-24" onClick={() => setOpenDialog(false)}>
+                  No
+                </Button>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
       <div className="absolute">
         <Link to="/main-menu">
           <img
@@ -123,13 +175,13 @@ const MultipleChoice = () => {
                 />
               </Link>
             ) : (
-              <Link to={`/quiz/multiple-choice/${Number(id) + 1}`}>
+              <div onClick={handleFinishDialog}>
                 <img
                   src={icons.BUTTON_FINISH}
                   alt="next-button"
                   className="button-effect-clicked h-[35px] w-[95px]"
                 />
-              </Link>
+              </div>
             )}
           </div>
         </div>
