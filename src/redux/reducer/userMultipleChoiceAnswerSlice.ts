@@ -22,10 +22,13 @@ export const userMultipleChoiceAnswerSlice = createSlice({
         state.push(action.payload);
       }
     },
+    resetMultipleChoiceAnswer: () => {
+      return initialState;
+    },
   },
 });
 
-export const { saveMultipleChoiceAnswer } =
+export const { saveMultipleChoiceAnswer, resetMultipleChoiceAnswer } =
   userMultipleChoiceAnswerSlice.actions;
 export const userMultipleChoiceAnswer = (state: RootState) =>
   state.userMultipleChoiceAnswer;

@@ -8,7 +8,7 @@ const Material = () => {
         <img
           src={icons.BUTTON_HOME}
           alt="home-button"
-          className="button-effect-clicked absolute left-6 top-10 w-14"
+          className="button-effect-clicked absolute left-6 top-10 h-9 w-10"
         />
       </Link>
 

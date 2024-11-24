@@ -40,11 +40,13 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   loading?: boolean;
+  loadingColor?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
+      loadingColor,
       className,
       loading = false,
       children,
@@ -65,7 +67,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading && (
-          <Loader2 className="mr-1 h-5 w-5 animate-spin text-muted text-pink-500" />
+          <Loader2
+            className={`mr-1 h-5 w-5 animate-spin text-muted ${loadingColor ? loadingColor : "text-pink-500"}`}
+          />
         )}
         <Slottable>{loading ? "Loading..." : children}</Slottable>
       </Comp>

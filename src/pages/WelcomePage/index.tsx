@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Power, Triangle } from "lucide-react";
+
 import { useDispatch } from "react-redux";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import {
   Dialog,
   DialogContent,
@@ -19,10 +14,11 @@ import {
 } from "@/components/ui/dialog";
 
 import { useAppSelector } from "@/hooks/useAppSelector";
-import { removeUser, saveUser } from "@/redux/reducer/userSlice";
+import { saveUser } from "@/redux/reducer/userSlice";
 
 import { icons } from "../../constant/icons";
 import { images } from "../../constant/images";
+import { Navbar } from "@/components";
 
 const WelcomePage = () => {
   const dispatch = useDispatch();
@@ -41,14 +37,6 @@ const WelcomePage = () => {
     setTimeout(() => {
       dispatch(saveUser({ ...user, name }));
       setOpenDialog(false);
-      setLoading(false);
-    }, 1000);
-  };
-
-  const handleLogout = () => {
-    setLoading(true);
-    setTimeout(() => {
-      dispatch(removeUser());
       setLoading(false);
     }, 1000);
   };
@@ -88,21 +76,7 @@ const WelcomePage = () => {
         </DialogContent>
       </Dialog>
 
-      {user.name?.length !== 0 && (
-        <div className="flex gap-2 self-end">
-          <p className="font-moreSugar text-base">Hi {user.name}!</p>
-          <Popover>
-            <PopoverTrigger className="transition duration-300 ease-in-out data-[state=closed]:rotate-180">
-              <Triangle className="w-2.5 fill-black" />
-            </PopoverTrigger>
-            <PopoverContent className="mr-5 w-auto p-2">
-              <Button loading={loading} className="w-24" onClick={handleLogout}>
-                <Power /> Logout
-              </Button>
-            </PopoverContent>
-          </Popover>
-        </div>
-      )}
+      <Navbar />
       <div className="flex h-full w-full flex-col items-center justify-center">
         <div className="mt-4">
           <img
