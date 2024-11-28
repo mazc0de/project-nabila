@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 import { useAppSelector } from "@/hooks/useAppSelector";
 
-import { TrueOrFalseQuestionType } from "@/types";
 import { icons } from "@/constant/icons";
 import { Navbar } from "@/components";
 
@@ -31,8 +30,7 @@ const TrueOrFalseResult = () => {
 
   const [isCalculating, setIsCalculating] = useState<boolean>(true);
   const [dots, setDots] = useState<string>("");
-  const [trueOrFalseQuestionData, setTrueOrFalseQuestionData] =
-    useState<TrueOrFalseQuestionType[]>();
+
   const [correctAnswerCount, setCorrectAnswerCount] = useState<number>(0);
   const [wrongAnswerCount, setWrongAnswerCount] = useState<number>(0);
   const [questionAnswered, setQuestionAnswered] = useState<number>(0);
@@ -42,8 +40,55 @@ const TrueOrFalseResult = () => {
 
   const [finalPoint, setFinalPoint] = useState<number>(0);
 
-  console.log(trueOrFalseQuestionData);
-  console.log(userTrueOrFalseAnswer);
+  const calculatePoint = () => {
+    try {
+      // Pertanyaan yang dijawab
+      const questionAnswered = userTrueOrFalseAnswer?.length;
+      // Pertanyaan yang tidak dijawab
+      const questionNotAnswered =
+        QUESTION_TOTAL - userTrueOrFalseAnswer?.length;
+      setQuestionAnswered(questionAnswered);
+      setQuestionNotAnswered(questionNotAnswered);
+
+      let correctAnswerCount = 0;
+      let wrongAnswerCount = 0;
+
+      // Looping jawaban
+      userTrueOrFalseAnswer.forEach((userAnswer) => {
+        const correctAnswer = trueOrFalseQuestion?.find(
+          (item) => item.id === userAnswer.questionId,
+        )?.correctAnswer;
+
+        // Bandingkan jawaban user dengan jawaban yang benar
+        if (userAnswer.userAnswer === correctAnswer) {
+          correctAnswerCount++;
+        } else {
+          wrongAnswerCount++;
+        }
+      });
+      setCorrectAnswerCount(correctAnswerCount);
+      setWrongAnswerCount(wrongAnswerCount);
+      const finalPoint = (correctAnswerCount / QUESTION_TOTAL) * 100;
+      setFinalPoint(finalPoint);
+      const timer = setTimeout(() => {
+        setIsCalculating(false);
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    calculatePoint();
+  }, []);
+
+  useEffect(() => {
+    if (!isCalculating) {
+      dispatch(resetTrueOrFalseAnswer());
+    }
+  }, [isCalculating]);
 
   const handleGoToHome = () => {
     setLoading(true);
@@ -66,57 +111,6 @@ const TrueOrFalseResult = () => {
       setDots("");
     }
   }, [isCalculating]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsCalculating(false);
-    }, 4000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    // dispatch(resetMultipleChoiceAnswer());
-    const questionAnswered = userTrueOrFalseAnswer?.length;
-    const questionNotAnswered = QUESTION_TOTAL - userTrueOrFalseAnswer?.length;
-    setQuestionAnswered(questionAnswered);
-    setQuestionNotAnswered(questionNotAnswered);
-    setTrueOrFalseQuestionData(trueOrFalseQuestion);
-  }, []);
-
-  useEffect(() => {
-    // Variabel lokal untuk menghitung jawaban
-    let correctAnswerCount = 0;
-    let wrongAnswerCount = 0;
-
-    // Iterasi pada jawaban pengguna
-    userTrueOrFalseAnswer.forEach((userAnswer) => {
-      const correctAnswer = trueOrFalseQuestionData?.find(
-        (item) => item?.id === userAnswer.questionId,
-      )?.correctAnswer;
-
-      // Bandingkan jawaban pengguna dengan jawaban yang benar
-      if (userAnswer.userAnswer === correctAnswer) {
-        correctAnswerCount++;
-      } else {
-        wrongAnswerCount++;
-      }
-    });
-
-    // Setelah selesai loop, set state
-    setCorrectAnswerCount(correctAnswerCount);
-    setWrongAnswerCount(wrongAnswerCount);
-  }, [userTrueOrFalseAnswer, trueOrFalseQuestionData]);
-
-  useEffect(() => {
-    const finalPoint = (correctAnswerCount / QUESTION_TOTAL) * 100;
-    setFinalPoint(finalPoint);
-    console.log(finalPoint);
-  }, [correctAnswerCount, wrongAnswerCount]);
-
-  useEffect(() => {
-    // dispatch(resetTrueOrFalseAnswer());
-  }, [finalPoint]);
 
   return (
     <div className="relative flex h-screen w-full flex-col bg-grass bg-cover bg-bottom p-5">
