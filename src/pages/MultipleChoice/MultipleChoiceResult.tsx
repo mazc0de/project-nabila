@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { useAppSelector } from "@/hooks/useAppSelector";
-import { multipleChoiceQuestion } from "./multipleChoiceQuestion";
 import { QuestionType } from "@/types";
 import { icons } from "@/constant/icons";
 import { Navbar } from "@/components";
@@ -40,6 +39,57 @@ const MultipleChoiceResult = () => {
 
   const [finalPoint, setFinalPoint] = useState<number>(0);
 
+  const calculatePoint = () => {
+    try {
+      // Pertanyaan yang dijawab
+      const questionAnswered = userMultipleChoiceAnswer?.length;
+      const questionNotAnswered =
+        QUESTION_TOTAL - userMultipleChoiceAnswer?.length;
+      // Pertanyaan yang tidak dijawab
+      setQuestionAnswered(questionAnswered);
+      setQuestionNotAnswered(questionNotAnswered);
+
+      let correctAnswerCount = 0;
+      let wrongAnswerCount = 0;
+
+      userMultipleChoiceAnswer.forEach((userAnswer) => {
+        const correctAnswer = multipleChoiceQuestionData?.find(
+          (item) => item?.questionId === userAnswer?.questionId,
+        )?.correctAnswer;
+
+        if (userAnswer.userAnswer === correctAnswer) {
+          correctAnswerCount++;
+        } else if (userAnswer.userAnswer !== correctAnswer) {
+          wrongAnswerCount++;
+        }
+
+        setCorrectAnswerCount(correctAnswerCount);
+        setWrongAnswerCount(wrongAnswerCount);
+      });
+
+      const finalPoint = (correctAnswerCount / QUESTION_TOTAL) * 100;
+      setFinalPoint(finalPoint);
+
+      const timer = setTimeout(() => {
+        setIsCalculating(false);
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    calculatePoint();
+  }, []);
+
+  useEffect(() => {
+    if (!isCalculating) {
+      dispatch(resetMultipleChoiceAnswer());
+    }
+  }, [isCalculating]);
+
   const handleGoToHome = () => {
     setLoading(true);
     setTimeout(() => {
@@ -61,53 +111,6 @@ const MultipleChoiceResult = () => {
       setDots("");
     }
   }, [isCalculating]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsCalculating(false);
-    }, 4000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    // dispatch(resetMultipleChoiceAnswer());
-    const questionAnswered = userMultipleChoiceAnswer?.length;
-    const questionNotAnswered =
-      QUESTION_TOTAL - userMultipleChoiceAnswer?.length;
-    setQuestionAnswered(questionAnswered);
-    setQuestionNotAnswered(questionNotAnswered);
-    setMultipleChoiceQuestionData(multipleChoiceQuestion);
-  }, []);
-
-  useEffect(() => {
-    let correctAnswerCount = 0;
-    let wrongAnswerCount = 0;
-
-    userMultipleChoiceAnswer.forEach((userAnswer) => {
-      const correctAnswer = multipleChoiceQuestionData?.find(
-        (item) => item?.questionId === userAnswer?.questionId,
-      )?.correctAnswer;
-
-      if (userAnswer.userAnswer === correctAnswer) {
-        correctAnswerCount++;
-      } else if (userAnswer.userAnswer !== correctAnswer) {
-        wrongAnswerCount++;
-      }
-
-      setCorrectAnswerCount(correctAnswerCount);
-      setWrongAnswerCount(wrongAnswerCount);
-    });
-  }, [userMultipleChoiceAnswer, multipleChoiceQuestionData]);
-
-  useEffect(() => {
-    const finalPoint = (correctAnswerCount / QUESTION_TOTAL) * 100;
-    setFinalPoint(finalPoint);
-  }, [correctAnswerCount, wrongAnswerCount]);
-
-  useEffect(() => {
-    dispatch(resetMultipleChoiceAnswer());
-  }, [finalPoint]);
 
   return (
     <div className="relative flex h-screen w-full flex-col bg-grass bg-cover bg-bottom p-5">
