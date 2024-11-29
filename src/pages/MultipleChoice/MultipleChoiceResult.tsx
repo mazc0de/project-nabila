@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { useAppSelector } from "@/hooks/useAppSelector";
-import { QuestionType } from "@/types";
 import { icons } from "@/constant/icons";
 import { Navbar } from "@/components";
 import { resetMultipleChoiceAnswer } from "@/redux/reducer/userMultipleChoiceAnswerSlice";
@@ -16,6 +15,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { multipleChoiceQuestion } from "./multipleChoiceQuestion";
 
 const MultipleChoiceResult = () => {
   const dispatch = useDispatch();
@@ -28,8 +28,6 @@ const MultipleChoiceResult = () => {
 
   const [isCalculating, setIsCalculating] = useState<boolean>(true);
   const [dots, setDots] = useState<string>("");
-  const [multipleChoiceQuestionData, setMultipleChoiceQuestionData] =
-    useState<QuestionType[]>();
   const [correctAnswerCount, setCorrectAnswerCount] = useState<number>(0);
   const [wrongAnswerCount, setWrongAnswerCount] = useState<number>(0);
   const [questionAnswered, setQuestionAnswered] = useState<number>(0);
@@ -53,7 +51,7 @@ const MultipleChoiceResult = () => {
       let wrongAnswerCount = 0;
 
       userMultipleChoiceAnswer.forEach((userAnswer) => {
-        const correctAnswer = multipleChoiceQuestionData?.find(
+        const correctAnswer = multipleChoiceQuestion?.find(
           (item) => item?.questionId === userAnswer?.questionId,
         )?.correctAnswer;
 

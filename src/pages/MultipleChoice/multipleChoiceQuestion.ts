@@ -254,7 +254,7 @@ export const multipleChoiceQuestion: QuestionType[] = [
         text: "Yuki Kato",
       },
     ],
-    correctAnswer: "XX",
+    correctAnswer: "B",
   },
   {
     questionId: "10",
@@ -311,7 +311,7 @@ export const multipleChoiceQuestion: QuestionType[] = [
         text: "Impossible",
       },
     ],
-    correctAnswer: "XX",
+    correctAnswer: "A",
   },
   {
     questionId: "12",
@@ -339,7 +339,7 @@ export const multipleChoiceQuestion: QuestionType[] = [
         text: "to tells the story about a man",
       },
     ],
-    correctAnswer: "XX",
+    correctAnswer: "B",
   },
   {
     questionId: "13",
@@ -367,7 +367,7 @@ export const multipleChoiceQuestion: QuestionType[] = [
         text: "Between of the room",
       },
     ],
-    correctAnswer: "XX",
+    correctAnswer: "A",
   },
   {
     questionId: "14",
@@ -395,7 +395,7 @@ export const multipleChoiceQuestion: QuestionType[] = [
         text: "Add",
       },
     ],
-    correctAnswer: "XX",
+    correctAnswer: "C",
   },
   {
     questionId: "15",
