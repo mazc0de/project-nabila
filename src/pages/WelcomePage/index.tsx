@@ -77,7 +77,12 @@ const WelcomePage = () => {
       </Dialog>
 
       <Navbar />
-      <div className="flex h-full w-full flex-col items-center justify-center">
+      <div className="relative flex h-full w-full flex-col items-center justify-center">
+        <img
+          src={images.LOGO_UNIMUS}
+          alt="star-logo"
+          className="absolute left-0 top-0 tablet:w-[150px] laptop:w-[250px]"
+        />
         <div className="mt-4">
           <img
             src={images.STAR_LOGO}
