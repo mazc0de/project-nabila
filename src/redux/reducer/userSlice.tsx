@@ -4,7 +4,7 @@ import type { RootState } from "../store/index";
 import { UserType } from "../../types";
 
 const initialState: UserType = {
-  name: "",
+  name: "-",
   multipleChoiceValue: 0,
   TrueOrFalseValue: 0,
   studentId: "-",
@@ -22,6 +22,7 @@ export const userSlice = createSlice({
       state.multipleChoiceValue = action.payload.multipleChoiceValue;
       state.TrueOrFalseValue = action.payload.TrueOrFalseValue;
       state.studentId = action.payload.studentId;
+      state.bio = action.payload.bio;
       state.instagramUsername = action.payload.instagramUsername;
       state.email = action.payload.email;
     },
