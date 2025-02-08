@@ -44,4 +44,8 @@ export type UserType = {
   name: string;
   multipleChoiceValue: number;
   TrueOrFalseValue: number;
+  studentId: string;
+  bio: string;
+  instagramUsername: string;
+  email: string;
 };

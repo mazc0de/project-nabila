@@ -7,6 +7,7 @@ import MATERIAL_BUTTON from "../assets/images/button_material.png";
 import RON_WEASLEY from "../assets/images/ron-weasley.png";
 import HARRY_POTTER from "../assets/images/harry-potter.png";
 import LOGO_UNIMUS from "../assets/images/LogoUnimus.png";
+import DEFAULT_PROFILE_PICTURE from "../assets/images/profile-user.png";
 
 export const images = {
   SCHOOL,
@@ -18,4 +19,5 @@ export const images = {
   LOGO_UNIMUS,
   HARRY_POTTER,
   MATERIAL_BUTTON,
+  DEFAULT_PROFILE_PICTURE,
 };

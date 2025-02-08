@@ -41,7 +41,9 @@ const Navbar = () => {
     <>
       {user.name?.length !== 0 && (
         <div className="flex gap-2 self-end">
-          <p className="font-moreSugar text-base">Hi {user.name}!</p>
+          <p className="font-moreSugar text-base">
+            Hi <span className="capitalize">{user.name}</span>!
+          </p>
           <Popover>
             <PopoverTrigger className="transition duration-300 ease-in-out data-[state=closed]:rotate-180">
               <Triangle className="w-2.5 fill-black" />
