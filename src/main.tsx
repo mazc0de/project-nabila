@@ -21,6 +21,10 @@ import {
   WelcomePage,
   MultipleChoiceResult,
   TrueOrFalseResult,
+  Setting,
+  Profile,
+  Instruction,
+  Source,
 } from "./pages";
 
 import store, { persistor } from "./redux/store";
@@ -34,6 +38,11 @@ createRoot(document.getElementById("root")!).render(
             <Route element={<Layout />}>
               <Route path="/" element={<WelcomePage />} />
               <Route path="/main-menu" element={<MainMenu />} />
+              <Route path="/setting" element={<Setting />}>
+                <Route path="/setting/profile" element={<Profile />} />
+                <Route path="/setting/instruction" element={<Instruction />} />
+                <Route path="/setting/source" element={<Source />} />
+              </Route>
               <Route path="/material-definition" element={<Material />} />
               <Route
                 path="/material-definition/generic-structure"
