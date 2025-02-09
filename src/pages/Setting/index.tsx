@@ -5,7 +5,7 @@ import { headerMenu } from "@/constant/headerMenu";
 
 const Setting = () => {
   return (
-    <div className="flex h-screen w-full flex-col items-center bg-material-definition bg-cover bg-bottom p-10">
+    <div className="flex h-screen w-full flex-col items-center bg-material-definition bg-cover bg-bottom p-5">
       <div className="flex w-full justify-between">
         <Link to="/main-menu">
           <img
@@ -21,7 +21,7 @@ const Setting = () => {
         />
       </div>
       <div className="flex w-[550px] flex-col laptop:w-[850px]">
-        <div className="flex w-full flex-col items-center justify-center gap-8 pt-2 laptop:pt-14">
+        <div className="flex w-full flex-col items-center justify-center pt-2 laptop:pt-14">
           <div className="flex w-full justify-between">
             {headerMenu.map((item: any) => {
               return (
@@ -41,7 +41,7 @@ const Setting = () => {
               );
             })}
           </div>
-          <div className="shadow-card__material-definition flex h-auto w-full flex-col gap-3 rounded-lg bg-[#FFF1BF] p-5">
+          <div className="shadow-card__material-definition mt-5 flex h-auto w-full flex-col gap-3 rounded-lg bg-[#FFF1BF] p-5">
             <Outlet />
           </div>
         </div>

@@ -31,9 +31,8 @@ const Navbar = () => {
   const handleProfileButton = () => {
     setLoadingProfile(true);
     setTimeout(() => {
-      // dispatch(removeUser());
       setLoadingProfile(false);
-      navigate("/profile");
+      navigate("/setting/profile");
     }, 1000);
   };
 

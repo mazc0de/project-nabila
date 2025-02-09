@@ -25,6 +25,7 @@ const WelcomePage = () => {
   const user = useAppSelector((state) => state.user);
 
   const [openDialog, setOpenDialog] = useState<boolean>(false);
+
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleForm = (e: any) => {
@@ -42,7 +43,7 @@ const WelcomePage = () => {
   };
 
   useEffect(() => {
-    if (user?.name?.length !== 0) {
+    if (user?.name !== "-") {
       setOpenDialog(false);
     } else {
       setOpenDialog(true);
