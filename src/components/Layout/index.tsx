@@ -31,6 +31,8 @@ const Layout = () => {
   useEffect(() => {
     if (location.pathname === ROUTES.HOME) {
       setBgImage("bg-welcome-page");
+    } else if (location.pathname === ROUTES.MAIN_MENU) {
+      setBgImage("bg-main-menu");
     }
   }, [location.pathname]);
 
