@@ -41,7 +41,7 @@ const Setting = () => {
               );
             })}
           </div>
-          <div className="shadow-card__material-definition mt-5 flex h-auto w-full flex-col gap-3 rounded-lg bg-[#FFF1BF] p-5">
+          <div className="shadow-card__material-definition mt-5 flex h-52 w-full flex-col gap-3 rounded-lg bg-[#FFF1BF] p-5">
             <Outlet />
           </div>
         </div>

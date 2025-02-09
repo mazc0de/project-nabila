@@ -2,7 +2,7 @@ import { sourceData } from "@/constant/sourceData";
 
 const Source = () => {
   return (
-    <div>
+    <div className="overflow-y-scroll">
       {sourceData.map((item) => {
         return (
           <div className="last:mt-2">
