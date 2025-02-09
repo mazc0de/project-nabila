@@ -53,19 +53,11 @@ createRoot(document.getElementById("root")!).render(
                 path="/material-definition/language-features"
                 element={<LanguageFeatures />}
               />
-              <Route
-                path="/material-definition/prambanan-temple"
-                element={<PrambananTemple />}
-              />
-              {/* <Route
-                path="/material-definition/my-lovely-cat"
-                element={<MyLovelyCat />}
-              /> */}
               <Route path="/material">
                 <Route path="/material/:id" element={<MaterialText />} />
               </Route>
+              <Route path="/quiz-menu" element={<QuizMenu />} />
             </Route>
-            <Route path="/quiz-menu" element={<QuizMenu />} />
             <Route
               path="/quiz/multiple-choice/:id"
               element={<MultipleChoice />}
