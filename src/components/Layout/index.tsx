@@ -4,7 +4,7 @@ import ROUTES from "@/constant/routes";
 import Navbar from "../Navbar";
 
 const Layout = () => {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const [bgImage, setBgImage] = useState<string>("");
@@ -29,10 +29,16 @@ const Layout = () => {
   }, []);
 
   useEffect(() => {
-    if (location.pathname === ROUTES.HOME) {
+    if (pathname === ROUTES.HOME) {
       setBgImage("bg-welcome-page");
-    } else if (location.pathname === ROUTES.MAIN_MENU) {
+    } else if (pathname === ROUTES.MAIN_MENU) {
       setBgImage("bg-main-menu");
+    } else if (pathname === ROUTES.MATERIAL_DEFINITION) {
+      setBgImage("bg-material-definition");
+    } else if (pathname === ROUTES.GENERIC_STRUCTURE) {
+      setBgImage("bg-generic-structure");
+    } else if (pathname === ROUTES.LANGUAGE_FEATURES) {
+      setBgImage("bg-language-features");
     }
   }, [location.pathname]);
 

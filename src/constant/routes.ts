@@ -5,6 +5,8 @@ const ROUTES = {
   MATERIAL_DEFINITION: "/material-definition",
   QUIZ: "/quiz-menu",
   TEST: "/test",
+  GENERIC_STRUCTURE: "/material-definition/generic-structure",
+  LANGUAGE_FEATURES: "/material-definition/language-features",
 };
 
 export default ROUTES;
