@@ -7,6 +7,7 @@ const ROUTES = {
   TEST: "/test",
   GENERIC_STRUCTURE: "/material-definition/generic-structure",
   LANGUAGE_FEATURES: "/material-definition/language-features",
+  MATERIAL_TEXT_1: "/material/1",
 };
 
 export default ROUTES;

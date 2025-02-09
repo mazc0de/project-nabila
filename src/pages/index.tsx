@@ -14,13 +14,14 @@ import Instruction from "./Setting/Instruction";
 import Source from "./Setting/Source";
 import TrueOrFalseQuiz from "./TrueOrFalse/TrueOrFalseQuiz";
 import TrueOrFalseResult from "./TrueOrFalse/TrueOrFalseResult";
-
 import WelcomePage from "./WelcomePage";
+import MaterialText from "./MaterialText";
 
 export {
   TrueOrFalseResult,
   MainMenu,
   Profile,
+  MaterialText,
   Instruction,
   Source,
   Setting,

@@ -39,6 +39,8 @@ const Layout = () => {
       setBgImage("bg-generic-structure");
     } else if (pathname === ROUTES.LANGUAGE_FEATURES) {
       setBgImage("bg-language-features");
+    } else if (/^\/material\/[^/]+$/.test(pathname)) {
+      setBgImage("bg-language-features");
     }
   }, [location.pathname]);
 

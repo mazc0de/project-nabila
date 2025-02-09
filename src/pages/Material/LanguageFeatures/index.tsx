@@ -43,7 +43,7 @@ const LanguageFeatures = () => {
           </Link>
         </div>
         <div className="ml-1">
-          <Link to={ROUTES.LANGUAGE_FEATURES}>
+          <Link to={ROUTES.MATERIAL_TEXT_1}>
             <img
               src={icons.BUTTON_NEXT}
               alt="next-button"

@@ -25,6 +25,7 @@ import {
   Profile,
   Instruction,
   Source,
+  MaterialText,
 } from "./pages";
 
 import store, { persistor } from "./redux/store";
@@ -56,10 +57,13 @@ createRoot(document.getElementById("root")!).render(
                 path="/material-definition/prambanan-temple"
                 element={<PrambananTemple />}
               />
-              <Route
+              {/* <Route
                 path="/material-definition/my-lovely-cat"
                 element={<MyLovelyCat />}
-              />
+              /> */}
+              <Route path="/material">
+                <Route path="/material/:id" element={<MaterialText />} />
+              </Route>
             </Route>
             <Route path="/quiz-menu" element={<QuizMenu />} />
             <Route
