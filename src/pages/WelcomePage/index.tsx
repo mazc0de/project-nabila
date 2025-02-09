@@ -18,7 +18,7 @@ import { saveUser } from "@/redux/reducer/userSlice";
 
 import { icons } from "../../constant/icons";
 import { images } from "../../constant/images";
-import { Navbar } from "@/components";
+import ROUTES from "@/constant/routes";
 
 const WelcomePage = () => {
   const dispatch = useDispatch();
@@ -51,7 +51,21 @@ const WelcomePage = () => {
   }, [user]);
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center bg-welcome-page bg-cover bg-top p-5 tablet:justify-center laptop:justify-start laptop:bg-center">
+    <>
+      <div className="flex h-screen w-full flex-col items-center justify-center">
+        <img
+          src={images.STAR_LOGO}
+          alt="star-logo"
+          className="bounce-image w-96 tablet:w-[450px] laptop:w-[550px]"
+        />
+        <Link to={ROUTES.MAIN_MENU}>
+          <img
+            src={icons.BUTTON_PLAY}
+            alt="play-button-icon"
+            className="w-44 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 lg:w-52"
+          />
+        </Link>
+      </div>
       <Dialog open={openDialog}>
         <DialogContent className="shadow-card__generic-structure w-full bg-off-white-100 [&>button]:hidden">
           <DialogHeader className="">
@@ -76,30 +90,7 @@ const WelcomePage = () => {
           </DialogHeader>
         </DialogContent>
       </Dialog>
-
-      <Navbar />
-      <div className="relative flex h-full w-full flex-col items-center justify-center">
-        <img
-          src={images.LOGO_UNIMUS}
-          alt="star-logo"
-          className="absolute left-0 top-0 tablet:w-[150px] laptop:w-[250px]"
-        />
-        <div className="mt-4">
-          <img
-            src={images.STAR_LOGO}
-            alt="star-logo"
-            className="bounce-image w-96 tablet:w-[450px] laptop:w-[550px]"
-          />
-        </div>
-        <Link to="/main-menu">
-          <img
-            src={icons.BUTTON_PLAY}
-            alt="play-button-icon"
-            className="w-32 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 tablet:w-44 laptop:w-60"
-          />
-        </Link>
-      </div>
-    </div>
+    </>
   );
 };
 
