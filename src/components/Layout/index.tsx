@@ -41,6 +41,8 @@ const Layout = () => {
       setBgImage("bg-language-features");
     } else if (/^\/material\/[^/]+$/.test(pathname)) {
       setBgImage("bg-language-features");
+    } else if (/^\/setting\/[^/]+$/.test(pathname)) {
+      setBgImage("bg-material-definition");
     }
   }, [location.pathname]);
 

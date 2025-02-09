@@ -4,13 +4,13 @@ import type { RootState } from "../store/index";
 import { UserType } from "../../types";
 
 const initialState: UserType = {
-  name: "-",
+  name: "",
   multipleChoiceValue: 0,
   TrueOrFalseValue: 0,
-  studentId: "-",
-  bio: "-",
-  instagramUsername: "-",
-  email: "-",
+  studentId: "",
+  bio: "",
+  instagramUsername: "",
+  email: "",
 };
 
 export const userSlice = createSlice({

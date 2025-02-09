@@ -59,50 +59,6 @@ const Profile = () => {
     }
   };
 
-  // const handleForm = (e: any, field: string) => {
-  //   try {
-  //     e.preventDefault();
-  //     setLoading(true);
-
-  //     const formData = new FormData(e.target);
-  //     const inputField = formData.get(field) as string;
-
-  //     if (field === "name") {
-  //       setTimeout(() => {
-  //         dispatch(saveUser({ ...user, name: inputField }));
-  //         setOpenDialog(false);
-  //         setLoading(false);
-  //       }, 1000);
-  //     } else if (field === "bio") {
-  //       setTimeout(() => {
-  //         dispatch(saveUser({ ...user, bio: inputField }));
-  //         setOpenDialog(false);
-  //         setLoading(false);
-  //       }, 1000);
-  //     } else if (field === "studentId") {
-  //       setTimeout(() => {
-  //         dispatch(saveUser({ ...user, studentId: inputField }));
-  //         setOpenDialog(false);
-  //         setLoading(false);
-  //       }, 1000);
-  //     } else if (field === "instagramUsername") {
-  //       setTimeout(() => {
-  //         dispatch(saveUser({ ...user, instagramUsername: inputField }));
-  //         setOpenDialog(false);
-  //         setLoading(false);
-  //       }, 1000);
-  //     } else if (field === "email") {
-  //       setTimeout(() => {
-  //         dispatch(saveUser({ ...user, email: inputField }));
-  //         setOpenDialog(false);
-  //         setLoading(false);
-  //       }, 1000);
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -164,13 +120,13 @@ const Profile = () => {
   }, [user]);
 
   return (
-    <div className="flex">
-      <div className="flex flex-col items-center">
-        <div className="relative">
+    <div className="w-full flex-col items-center justify-center lg:flex lg:flex-row lg:items-start lg:justify-between">
+      <div className="mb-3 flex flex-col items-center justify-center lg:w-1/3 lg:items-start">
+        <div className="relative w-40">
           <img
             src={profilePicture}
             alt="profile-picture"
-            className="aspect-[3/4] w-32 rounded-sm object-cover laptop:w-44"
+            className="aspect-[3/4] w-40 rounded-sm object-cover laptop:w-44"
           />
           {profilePicture !== images.DEFAULT_PROFILE_PICTURE && (
             <div
@@ -185,110 +141,106 @@ const Profile = () => {
           <FileUploader />
         </div>
       </div>
-      <div className="w-full pl-5">
-        <div className="flex h-32 w-full justify-between overflow-y-scroll">
-          <div className="w-3/6">
-            {/* Name */}
-            <div className="flex flex-col">
-              <div className="flex items-center">
-                <p className="font-moreSugar text-sm font-bold laptop:text-base">
-                  Name
-                </p>
-                <div className="pl-1">
-                  <SquarePen
-                    width={12}
-                    className="text-gray-400"
-                    onClick={() => {
-                      handleUpdateProfile("name");
-                    }}
-                  />
-                </div>
-              </div>
-              <p className="font-moreSugar text-sm capitalize laptop:text-base">
-                {user?.name}
-              </p>
-            </div>
-            {/* Bio */}
-            <div className="flex flex-col">
-              <div className="flex items-center">
-                <p className="font-moreSugar text-sm font-bold laptop:text-base">
-                  Bio
-                </p>
-                <div className="pl-1">
-                  <SquarePen
-                    width={12}
-                    className="text-gray-400"
-                    onClick={() => {
-                      handleUpdateProfile("bio");
-                    }}
-                  />
-                </div>
-              </div>
-              <p className="whitespace-pre-line font-moreSugar text-sm capitalize laptop:text-base">
-                {user?.bio}
-              </p>
+      <div className="mt-3 lg:mt-0 lg:w-2/3">
+        {/* Name */}
+        <div className="mb-3 flex flex-col">
+          <div className="flex">
+            <p className="font-moreSugar text-xl font-bold laptop:text-base">
+              Name
+            </p>
+            <div className="pl-1">
+              <SquarePen
+                width={12}
+                className="text-gray-400"
+                onClick={() => {
+                  handleUpdateProfile("name");
+                }}
+              />
             </div>
           </div>
-          <div className="w-3/6 pl-4">
-            {/* Student ID */}
-            <div className="flex flex-col">
-              <div className="flex items-center">
-                <p className="font-moreSugar text-sm font-bold laptop:text-base">
-                  Student ID
-                </p>
-                <div className="pl-1">
-                  <SquarePen
-                    width={12}
-                    className="text-gray-400"
-                    onClick={() => {
-                      handleUpdateProfile("studentId");
-                    }}
-                  />
-                </div>
-              </div>
-              <p className="font-moreSugar text-sm capitalize laptop:text-base">
-                {user?.studentId}
-              </p>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center">
-                <p className="font-moreSugar text-sm font-bold laptop:text-base">
-                  Instagram
-                </p>
-                <div className="pl-1">
-                  <SquarePen
-                    width={12}
-                    className="text-gray-400"
-                    onClick={() => {
-                      handleUpdateProfile("instagramUsername");
-                    }}
-                  />
-                </div>
-              </div>
-              <p className="font-moreSugar text-sm capitalize laptop:text-base">
-                {user?.instagramUsername}
-              </p>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center">
-                <p className="font-moreSugar text-sm font-bold laptop:text-base">
-                  Email
-                </p>
-                <div className="pl-1">
-                  <SquarePen
-                    width={12}
-                    className="text-gray-400"
-                    onClick={() => {
-                      handleUpdateProfile("email");
-                    }}
-                  />
-                </div>
-              </div>
-              <p className="font-moreSugar text-sm capitalize laptop:text-base">
-                {user?.email}
-              </p>
+          <p className="font-moreSugar text-xl capitalize laptop:text-base">
+            {user?.name !== "" ? user?.name : "-"}
+          </p>
+        </div>
+        {/* Bio */}
+        <div className="mb-3 flex flex-col">
+          <div className="flex">
+            <p className="font-moreSugar text-xl font-bold laptop:text-base">
+              Bio
+            </p>
+            <div className="pl-1">
+              <SquarePen
+                width={12}
+                className="text-gray-400"
+                onClick={() => {
+                  handleUpdateProfile("bio");
+                }}
+              />
             </div>
           </div>
+          <p className="whitespace-pre-line font-moreSugar text-xl capitalize laptop:text-base">
+            {user?.bio !== "" ? user?.bio : "-"}
+          </p>
+        </div>
+        {/* Student ID */}
+        <div className="mb-3 flex flex-col">
+          <div className="flex">
+            <p className="font-moreSugar text-xl font-bold laptop:text-base">
+              Student ID
+            </p>
+            <div className="pl-1">
+              <SquarePen
+                width={12}
+                className="text-gray-400"
+                onClick={() => {
+                  handleUpdateProfile("studentId");
+                }}
+              />
+            </div>
+          </div>
+          <p className="font-moreSugar text-xl capitalize laptop:text-base">
+            {user?.studentId !== "" ? user?.studentId : "-"}
+          </p>
+        </div>
+        {/*  Instagram */}
+        <div className="mb-3 flex flex-col">
+          <div className="flex">
+            <p className="font-moreSugar text-xl font-bold laptop:text-base">
+              Instagram
+            </p>
+            <div className="pl-1">
+              <SquarePen
+                width={12}
+                className="text-gray-400"
+                onClick={() => {
+                  handleUpdateProfile("instagramUsername");
+                }}
+              />
+            </div>
+          </div>
+          <p className="font-moreSugar text-xl capitalize laptop:text-base">
+            {user?.instagramUsername !== "" ? user?.instagramUsername : "-"}
+          </p>
+        </div>
+        {/* Email */}
+        <div className="flex flex-col">
+          <div className="flex">
+            <p className="font-moreSugar text-xl font-bold laptop:text-base">
+              Email
+            </p>
+            <div className="pl-1">
+              <SquarePen
+                width={12}
+                className="text-gray-400"
+                onClick={() => {
+                  handleUpdateProfile("email");
+                }}
+              />
+            </div>
+          </div>
+          <p className="font-moreSugar text-xl capitalize laptop:text-base">
+            {user?.email !== "" ? user?.email : "-"}
+          </p>
         </div>
       </div>
       <Dialog open={openDialog}>
@@ -298,28 +250,6 @@ const Profile = () => {
               {label}
             </DialogTitle>
             <DialogDescription>
-              {/* <form onSubmit={(e) => handleForm(e, field)}>
-                {field !== "bio" ? (
-                  <Input
-                    name={field}
-                    className="w-full border-blush-pink font-moreSugar focus-visible:ring-pink-400"
-                    placeholder={placeholder}
-                    required
-                  />
-                ) : (
-                  <Textarea
-                    name={field}
-                    placeholder={placeholder}
-                    className="w-full border-blush-pink font-moreSugar focus-visible:ring-pink-400"
-                  />
-                )}
-                <div className="mt-2 flex justify-center">
-                  <Button loading={loading} className="w-24">
-                    Save
-                  </Button>
-                </div>
-              </form> */}
-
               <form onSubmit={(e) => handleForm(e, field)}>
                 {field !== "bio" ? (
                   <Input

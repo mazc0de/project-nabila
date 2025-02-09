@@ -22,7 +22,7 @@ const FileUploader = () => {
 
   return (
     <div>
-      <button className="button-upload" onClick={handleClick}>
+      <button className="button-upload w-40" onClick={handleClick}>
         <p className="font-moreSugar text-sm">Upload a file</p>
       </button>
 

@@ -43,7 +43,7 @@ const WelcomePage = () => {
   };
 
   useEffect(() => {
-    if (user?.name !== "-") {
+    if (user?.name !== "") {
       setOpenDialog(false);
     } else {
       setOpenDialog(true);
