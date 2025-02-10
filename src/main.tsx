@@ -13,8 +13,6 @@ import {
   MainMenu,
   Material,
   MultipleChoice,
-  MyLovelyCat,
-  PrambananTemple,
   QuizMenu,
   TrueOrFalse,
   TrueOrFalseQuiz,
@@ -57,11 +55,11 @@ createRoot(document.getElementById("root")!).render(
                 <Route path="/material/:id" element={<MaterialText />} />
               </Route>
               <Route path="/quiz-menu" element={<QuizMenu />} />
+              <Route
+                path="/quiz/multiple-choice/:id"
+                element={<MultipleChoice />}
+              />
             </Route>
-            <Route
-              path="/quiz/multiple-choice/:id"
-              element={<MultipleChoice />}
-            />
             <Route
               path="/quiz/multiple-choice/result"
               element={<MultipleChoiceResult />}
