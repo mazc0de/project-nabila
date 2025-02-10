@@ -36,7 +36,7 @@ const TrueOrFalse = () => {
             <img
               src={icons.BUTTON_NEXT}
               alt="next-button"
-              className="button-effect-clicked h-[35px] w-[95px]"
+              className="button-effect-clicked h-[35px] w-[95px] lg:h-[50px] lg:w-[125px]"
             />
           </Link>
         </div>

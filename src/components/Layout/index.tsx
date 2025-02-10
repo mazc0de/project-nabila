@@ -49,6 +49,10 @@ const Layout = () => {
       setBgImage("bg-material-definition");
     } else if (pathname === ROUTES.TRUE_OR_FALSE) {
       setBgImage("bg-material-definition");
+    } else if (pathname === ROUTES.TRUE_OR_FALSE_RESULT) {
+      setBgImage("bg-material-definition");
+    } else if (/^\/quiz\/true-or-false\/[\w-]+$/.test(pathname)) {
+      setBgImage("bg-material-definition");
     }
   }, [location.pathname]);
 
