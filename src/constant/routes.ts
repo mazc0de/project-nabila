@@ -8,6 +8,7 @@ const ROUTES = {
   GENERIC_STRUCTURE: "/material-definition/generic-structure",
   LANGUAGE_FEATURES: "/material-definition/language-features",
   MATERIAL_TEXT_1: "/material/1",
+  TRUE_OR_FALSE: "/quiz/true-or-false",
 };
 
 export default ROUTES;

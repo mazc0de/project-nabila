@@ -63,17 +63,16 @@ createRoot(document.getElementById("root")!).render(
                 path="/quiz/multiple-choice/result"
                 element={<MultipleChoiceResult />}
               />
+              <Route path="/quiz/true-or-false" element={<TrueOrFalse />} />
+              <Route
+                path="/quiz/true-or-false/:id"
+                element={<TrueOrFalseQuiz />}
+              />
+              <Route
+                path="/quiz/true-or-false/result"
+                element={<TrueOrFalseResult />}
+              />
             </Route>
-
-            <Route path="/quiz/true-or-false" element={<TrueOrFalse />} />
-            <Route
-              path="/quiz/true-or-false/:id"
-              element={<TrueOrFalseQuiz />}
-            />
-            <Route
-              path="/quiz/true-or-false/result"
-              element={<TrueOrFalseResult />}
-            />
           </Routes>
         </BrowserRouter>
       </PersistGate>

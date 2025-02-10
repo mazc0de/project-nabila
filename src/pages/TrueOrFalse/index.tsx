@@ -5,27 +5,16 @@ import { ExplanatoryTextType } from "../../types";
 
 const TrueOrFalse = () => {
   return (
-    <div className="relative flex h-screen w-full flex-col bg-grass bg-cover bg-bottom p-5">
-      <div className="absolute">
-        <Link to="/main-menu">
-          <img
-            src={icons.BUTTON_HOME}
-            alt="home-button"
-            className="button-effect-clicked w-10"
-          />
-        </Link>
-      </div>
-      <div className="w-full">
-        <p className="text-peach-orange text-center font-moreSugar text-xl font-bold laptop:text-5xl laptop:leading-[60px]">
-          True or False Quiz
-        </p>
-      </div>
-      <div className="flex w-full justify-center">
-        <div className="shadow-card__generic-structure flex h-64 w-1/2 flex-row gap-2 rounded-lg bg-off-white-100 p-2">
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-cover bg-center p-5">
+      <p className="text-center font-moreSugar text-2xl font-bold text-peach-orange">
+        True or False Quiz
+      </p>
+      <div className="shadow-card__material-definition mt-2 flex flex-col justify-between rounded-lg bg-vanilla-cream p-5 lg:w-[720px]">
+        <div className="flex flex-col lg:flex-row">
           {explanatoryText?.map((item: ExplanatoryTextType) => {
             return (
-              <div className="flex h-full w-1/2 flex-col items-center justify-start rounded-md bg-off-white-200 p-2">
-                <p className="font-moreSugar text-sm font-bold text-black laptop:text-5xl laptop:leading-[60px]">
+              <div className="mx-0 flex h-60 flex-col items-center justify-center overflow-scroll first:mb-2 last:mt-2 lg:h-96 lg:w-1/2 lg:first:mb-0 lg:first:mr-3 lg:last:ml-3 lg:last:mt-0">
+                <p className="font-moreSugar text-sm font-bold text-black lg:text-lg">
                   {item?.title}
                 </p>
                 <img
@@ -34,7 +23,7 @@ const TrueOrFalse = () => {
                   className="aspect-square h-20 w-20 rounded-lg object-cover"
                 />
                 <div className="mt-2 overflow-scroll">
-                  <p className="font-moreSugar text-xs text-black laptop:text-5xl laptop:leading-[60px]">
+                  <p className="text-justify font-moreSugar text-sm text-black lg:text-lg">
                     {item?.description}
                   </p>
                 </div>
@@ -42,15 +31,15 @@ const TrueOrFalse = () => {
             );
           })}
         </div>
-      </div>
-      <div className="mt-4 flex justify-center">
-        <Link to={`/quiz/true-or-false/1`}>
-          <img
-            src={icons.BUTTON_NEXT}
-            alt="next-button"
-            className="button-effect-clicked h-[35px] w-[95px]"
-          />
-        </Link>
+        <div className="mt-4 flex justify-center">
+          <Link to={`/quiz/true-or-false/1`}>
+            <img
+              src={icons.BUTTON_NEXT}
+              alt="next-button"
+              className="button-effect-clicked h-[35px] w-[95px]"
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
