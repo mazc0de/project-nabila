@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import { useAppSelector } from "@/hooks/useAppSelector";
 import { icons } from "@/constant/icons";
-import { Navbar } from "@/components";
 import { resetMultipleChoiceAnswer } from "@/redux/reducer/userMultipleChoiceAnswerSlice";
+import { multipleChoiceQuestion } from "./multipleChoiceQuestion";
+import { Loader2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -15,7 +16,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { multipleChoiceQuestion } from "./multipleChoiceQuestion";
 
 const MultipleChoiceResult = () => {
   const dispatch = useDispatch();
@@ -111,15 +111,70 @@ const MultipleChoiceResult = () => {
   }, [isCalculating]);
 
   return (
-    <div className="relative flex h-screen w-full flex-col bg-grass bg-cover bg-bottom p-5">
-      <div className="absolute">
+    <>
+      <div className="mx-auto flex h-screen w-full flex-col items-center justify-center bg-cover bg-center p-5 lg:w-[650px]">
+        <div className="shadow-card__generic-structure w-full rounded-lg bg-off-white-100 p-3">
+          {isCalculating ? (
+            <div className="flex items-center">
+              <div className="mr-2">
+                <Loader2 className={`h-10 w-10 animate-spin text-black`} />
+              </div>
+              <p className="font-moreSugar text-sm font-bold lg:text-lg">
+                Calculating{dots}
+              </p>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-1">
+              <p className="font-moreSugar text-sm font-bold lg:text-lg">
+                Calculation complete your result is here!
+              </p>
+              <p className="font-moreSugar text-sm lg:text-lg">
+                Question Answered: {questionAnswered}
+              </p>
+              <p className="font-moreSugar text-sm lg:text-lg">
+                Question Not Answered: {questionNotAnswered}
+              </p>
+              <p className="font-moreSugar text-sm text-green-400 lg:text-lg">
+                Correct Answer : {correctAnswerCount}
+              </p>
+              <p className="font-moreSugar text-sm text-red-400 lg:text-lg">
+                Wrong Answer: {wrongAnswerCount}
+              </p>
+              <div className="flex items-center gap-2">
+                <p className="font-moreSugar text-sm lg:text-lg">
+                  Your point is : {finalPoint}
+                </p>
+                <img
+                  src={
+                    finalPoint === 0
+                      ? icons.FEEL_BAD_EMOJI
+                      : finalPoint <= 50
+                        ? icons.SAD_EMOJI
+                        : finalPoint <= 75
+                          ? icons.NEUTRAL_EMOJI
+                          : finalPoint < 90
+                            ? icons.SMILE_EMOJI
+                            : finalPoint >= 90
+                              ? icons.SMILE_EMOJI
+                              : undefined
+                  }
+                  alt="emoji-icon"
+                  className="w-5"
+                />
+              </div>
+            </div>
+          )}
+        </div>
         <Dialog open={openDialog} onOpenChange={setOpenDialog}>
           <DialogTrigger>
-            <img
-              src={icons.BUTTON_HOME}
-              alt="home-button"
-              className="button-effect-clicked w-10"
-            />
+            <div className="shadow-card__material-definition mt-5 flex w-auto cursor-pointer items-center rounded-lg bg-vanilla-cream p-3 transition duration-300 hover:bg-vanilla-cream/70 active:bg-vanilla-cream">
+              <img
+                src={icons.BUTTON_HOME}
+                alt="home button"
+                className="mr-2 w-10"
+              />
+              <p className="font-moreSugar text-sm lg:text-lg">Back to home</p>
+            </div>
           </DialogTrigger>
           <DialogContent className="shadow-card__generic-structure w-full bg-off-white-100 [&>button]:hidden">
             <DialogHeader className="">
@@ -146,53 +201,7 @@ const MultipleChoiceResult = () => {
           </DialogContent>
         </Dialog>
       </div>
-      <Navbar />
-      <div className="flex h-full items-center justify-center">
-        <div className="shadow-card__generic-structure flex h-auto min-h-44 w-96 flex-col gap-1 rounded-lg bg-off-white-100 p-3">
-          {isCalculating ? (
-            <p className="font-moreSugar">Calculating{dots}</p>
-          ) : (
-            <div className="flex flex-col gap-1">
-              <p className="font-moreSugar">
-                Calculation complete your result is here!
-              </p>
-              <p className="font-moreSugar">
-                Question Answered: {questionAnswered}
-              </p>
-              <p className="font-moreSugar">
-                Question Not Answered: {questionNotAnswered}
-              </p>
-              <p className="font-moreSugar text-green-400">
-                Correct Answer : {correctAnswerCount}
-              </p>
-              <p className="font-moreSugar text-red-400">
-                Wrong Answer: {wrongAnswerCount}
-              </p>
-              <div className="flex items-center gap-2">
-                <p className="font-moreSugar">Your point is : {finalPoint}</p>
-                <img
-                  src={
-                    finalPoint === 0
-                      ? icons.FEEL_BAD_EMOJI
-                      : finalPoint <= 50
-                        ? icons.SAD_EMOJI
-                        : finalPoint <= 75
-                          ? icons.NEUTRAL_EMOJI
-                          : finalPoint < 90
-                            ? icons.SMILE_EMOJI
-                            : finalPoint >= 90
-                              ? icons.SMILE_EMOJI
-                              : undefined
-                  }
-                  alt="emoji-icon"
-                  className="w-5"
-                />
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

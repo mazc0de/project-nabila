@@ -59,11 +59,12 @@ createRoot(document.getElementById("root")!).render(
                 path="/quiz/multiple-choice/:id"
                 element={<MultipleChoice />}
               />
+              <Route
+                path="/quiz/multiple-choice/result"
+                element={<MultipleChoiceResult />}
+              />
             </Route>
-            <Route
-              path="/quiz/multiple-choice/result"
-              element={<MultipleChoiceResult />}
-            />
+
             <Route path="/quiz/true-or-false" element={<TrueOrFalse />} />
             <Route
               path="/quiz/true-or-false/:id"

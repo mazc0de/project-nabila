@@ -45,7 +45,7 @@ const Layout = () => {
       setBgImage("bg-language-features");
     } else if (/^\/setting\/[^/]+$/.test(pathname)) {
       setBgImage("bg-material-definition");
-    } else if (/^\/quiz\/multiple-choice\/\d+$/.test(pathname)) {
+    } else if (/^\/quiz\/multiple-choice\/[\w-]+$/.test(pathname)) {
       setBgImage("bg-material-definition");
     }
   }, [location.pathname]);
