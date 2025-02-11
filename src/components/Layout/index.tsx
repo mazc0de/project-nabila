@@ -41,6 +41,8 @@ const Layout = () => {
       setBgImage("bg-language-features");
     } else if (pathname === ROUTES.QUIZ) {
       setBgImage("bg-quiz-menu");
+    } else if (pathname === ROUTES.TEST) {
+      setBgImage("bg-quiz-menu");
     } else if (/^\/material\/[^/]+$/.test(pathname)) {
       setBgImage("bg-language-features");
     } else if (/^\/setting\/[^/]+$/.test(pathname)) {

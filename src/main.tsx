@@ -24,6 +24,7 @@ import {
   Instruction,
   Source,
   MaterialText,
+  Test,
 } from "./pages";
 
 import store, { persistor } from "./redux/store";
@@ -72,6 +73,7 @@ createRoot(document.getElementById("root")!).render(
                 path="/quiz/true-or-false/result"
                 element={<TrueOrFalseResult />}
               />
+              <Route path="/test" element={<Test />} />
             </Route>
           </Routes>
         </BrowserRouter>

@@ -16,8 +16,10 @@ import TrueOrFalseQuiz from "./TrueOrFalse/TrueOrFalseQuiz";
 import TrueOrFalseResult from "./TrueOrFalse/TrueOrFalseResult";
 import WelcomePage from "./WelcomePage";
 import MaterialText from "./MaterialText";
+import Test from "./Test";
 
 export {
+  Test,
   TrueOrFalseResult,
   MainMenu,
   Profile,
