@@ -13,8 +13,10 @@ import NEUTRAL_EMOJI from "../assets/icons/neutral-emoji.svg";
 import SMILE_EMOJI from "../assets/icons/smile-emoji.svg";
 import HAHA_EMOJI from "../assets/icons/haha-emoji.svg";
 import FEEL_BAD_EMOJI from "../assets/icons/feel-bad-emoji.svg";
+import INFO from "../assets/icons/info.png";
 
 export const icons = {
+  INFO,
   FEEL_BAD_EMOJI,
   NEUTRAL_EMOJI,
   SMILE_EMOJI,

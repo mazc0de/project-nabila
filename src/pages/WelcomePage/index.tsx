@@ -52,7 +52,7 @@ const WelcomePage = () => {
 
   return (
     <>
-      <div className="flex h-screen w-full flex-col items-center justify-center">
+      <div className="relative flex h-screen w-full flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center">
           <img
             src={images.STEVE_LOGO}
@@ -72,6 +72,15 @@ const WelcomePage = () => {
             className="w-44 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 lg:w-52"
           />
         </Link>
+        <div className="absolute bottom-8 right-8 lg:bottom-14 lg:right-14">
+          <Link to={ROUTES.PROFILE}>
+            <img
+              src={icons.INFO}
+              alt="play-button-icon"
+              className="w-14 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 lg:w-20"
+            />
+          </Link>
+        </div>
       </div>
       <Dialog open={openDialog}>
         <DialogContent className="shadow-card__generic-structure w-full bg-off-white-100 [&>button]:hidden">
