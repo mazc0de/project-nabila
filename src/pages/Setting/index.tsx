@@ -1,6 +1,4 @@
-import { icons } from "@/constant/icons";
-import { images } from "@/constant/images";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { headerMenu } from "@/constant/headerMenu";
 
 const Setting = () => {

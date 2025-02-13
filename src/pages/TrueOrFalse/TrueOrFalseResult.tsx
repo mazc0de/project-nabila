@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "@/hooks/useAppSelector";
 
 import { icons } from "@/constant/icons";
-import { Navbar } from "@/components";
 
 import {
   Dialog,
