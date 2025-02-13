@@ -53,11 +53,18 @@ const WelcomePage = () => {
   return (
     <>
       <div className="flex h-screen w-full flex-col items-center justify-center">
-        <img
-          src={images.STAR_LOGO}
-          alt="star-logo"
-          className="bounce-image w-96 tablet:w-[450px] laptop:w-[550px]"
-        />
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src={images.STEVE_LOGO}
+            alt="star-logo"
+            className="bounce-image w-80 lg:w-[550px]"
+          />
+          <div className="mt-5 w-60 font-bold lg:w-full">
+            <p className="text-center font-moreSugar lg:text-2xl">
+              Study Tools to Enhance Understanding Descriptive Text
+            </p>
+          </div>
+        </div>
         <Link to={ROUTES.MAIN_MENU}>
           <img
             src={icons.BUTTON_PLAY}

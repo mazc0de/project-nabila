@@ -2,6 +2,7 @@ import SCHOOL from "../assets/images/school.png";
 import TEACHER from "../assets/images/teacher.png";
 import STUDENTS from "../assets/images/student.png";
 import STAR_LOGO from "../assets/images/logo/star_logo.png";
+import STEVE_LOGO from "../assets/images/logo/steve_logo.png";
 import QUIZ_BUTTON from "../assets/images/button_quiz.png";
 import MATERIAL_BUTTON from "../assets/images/button_material.png";
 import TEST_BUTTON from "../assets/images/button_test.png";
@@ -20,6 +21,7 @@ import MY_FAVORITE_MUG from "../assets/images/my-favorite-mug.jpg";
 
 export const images = {
   MY_LOVELY_MOM,
+  STEVE_LOGO,
   IR_SOEKARNO,
   OCHI_MY_LOVELY_PET,
   GINA_THE_GIRAFFE,
