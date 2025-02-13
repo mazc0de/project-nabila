@@ -10,10 +10,10 @@ const Setting = () => {
             <NavLink to={item.link}>
               {({ isActive }) => (
                 <div
-                  className={`shadow-card__material-definition my-2 flex h-10 w-[150px] items-center justify-center rounded-lg p-1 lg:mx-3 lg:my-0 lg:h-auto laptop:p-3 ${isActive ? "bg-[#f2d260]" : "bg-[#FFF1BF]"}`}
+                  className={`shadow-card__material-definition my-2 flex h-10 w-[150px] items-center justify-center rounded-lg p-1 lg:mx-3 lg:my-0 lg:h-auto lg:p-3 ${isActive ? "bg-[#f2d260]" : "bg-[#FFF1BF]"}`}
                 >
                   <p
-                    className={`text-center font-moreSugar text-sm laptop:text-base ${isActive && "font-bold"}`}
+                    className={`text-center font-moreSugar text-sm lg:text-base ${isActive && "font-bold"}`}
                   >
                     {item.menu}
                   </p>
@@ -23,7 +23,7 @@ const Setting = () => {
           );
         })}
       </div>
-      <div className="shadow-card__material-definition mt-5 flex h-96 w-full flex-col flex-wrap gap-3 overflow-y-scroll rounded-lg bg-[#FFF1BF] p-5 lg:w-[650px]">
+      <div className="shadow-card__material-definition mt-5 flex h-96 w-full flex-col flex-wrap gap-3 overflow-y-scroll rounded-lg bg-[#FFF1BF] p-5 lg:h-auto lg:max-h-[384px] lg:w-[650px]">
         <Outlet />
       </div>
     </div>

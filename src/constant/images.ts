@@ -18,8 +18,10 @@ import MY_SCHOOL from "../assets/images/my-school.jpg";
 import PRAMBANAN_TEMPLE from "../assets/images/prambanan-temple.jpg";
 import MY_PRETTY_SCHOOL_BAG from "../assets/images/my-pretty-school-bag.jpg";
 import MY_FAVORITE_MUG from "../assets/images/my-favorite-mug.jpg";
+import SHAFA_ALYANABILA from "../assets/images/shafa-alyanabila.png";
 
 export const images = {
+  SHAFA_ALYANABILA,
   MY_LOVELY_MOM,
   STEVE_LOGO,
   IR_SOEKARNO,
