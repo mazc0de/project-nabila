@@ -7,7 +7,7 @@ export const materialData = [
     identification:
       "I have an amazing mother. Her name is Dinda. She always takes care of our family. She has two cute daughters, my sister and I and a hard-working husband.",
     description:
-      "My mom is very pretty. She has wavy hair with black color. Her face is so perfect. She has shining eyes, a small nose and thin lips. Her body is tall and well- proportioned, like a model. She likes cooking. She often cooks delicious foods, like fried rice, soup, rendang, and many more.",
+      "My mom is very pretty. She has wavy hair with black color. Her face is so perfect. She has shining eyes, a small nose and thin lips. Her body is tall and well- proportioned, like a model. She likes cooking. She often cooks delicious foods, like fried rice, soup, rendang, and many more. Besides that she is a good painter. Her paintings are so colorful and meaningful. Once she taught me how to paint a beach view. That was so fun. My mom is my role model because she is such a charming, smart, kind and generous person. I am so lucky to have an amazing mother like her.",
     source: "",
     imageUrl: images.MY_LOVELY_MOM,
   },
@@ -15,7 +15,7 @@ export const materialData = [
     id: 2,
     title: "Ir. Soekarno",
     identification:
-      "Ir. Soekarno adalah presiden pertama Republik Indonesia. Ia biasa dipanggil Bung Karno. Dia lahir di Blitar, Jawa Timur, 6 Juni 1901. Ia memiliki tiga istri dan delapan anak.",
+      "Ir. Soekarno is the first president of the Republic of Indonesia. His nickname is Bung Karno. He was born at Blitar, Jawa Timur, 6 Juni 1901. He live in Pegangsaan Timur Street No. 56, Surabaya.",
     description:
       "Soekarno has a tall and strong body. His hair is black colored with short haircut. His fave is oval with round eyes and pointer nose. He has tan skinned. Her voice is so loud. He has an authoritative and charismatic aura. He also has a brave and determined spirit. He always wear a black cap.\nSoekarno known as Bapak Proklamator Indonesia, because his service in proclaiming Indonesia's independence. In other hand, his favourite food is tempe and sayur lodeh. He likes listening music, especially traditional music like keroncong and gamelan. Soekarno is a heroic figure highly admired by many people in Indonesia. His contributions in the struggle for Indonesia's independence and his exceptional oratorical skills have made him one of the world's great orators.",
     source: "",
