@@ -9,16 +9,16 @@ const GenericStructure = () => {
         <p className="text-center font-moreSugar text-3xl font-bold">
           Generic Structure
         </p>
-        <div className="shadow-card__material-definition bg-vanilla-cream mt-5 flex h-auto flex-col gap-3 rounded-lg p-5 lg:w-[550px]">
+        <div className="shadow-card__material-definition mt-5 flex h-auto flex-col gap-3 rounded-lg bg-vanilla-cream p-5 lg:w-[550px]">
           <p className="text-center font-moreSugar text-xl font-bold">
             Identification
           </p>
           <p className="text-center font-moreSugar text-lg">
-            Identification introduces and identifies specific objects (a person,
-            thing, place, animal, or event) intended to be described.
+            Identification introduces and identifies objects intended to be
+            described.
           </p>
         </div>
-        <div className="shadow-card__material-definition bg-vanilla-cream mt-5 flex h-auto flex-col gap-3 rounded-lg p-5 lg:w-[550px]">
+        <div className="shadow-card__material-definition mt-5 flex h-auto flex-col gap-3 rounded-lg bg-vanilla-cream p-5 lg:w-[550px]">
           <p className="text-center font-moreSugar text-xl font-bold">
             Description
           </p>

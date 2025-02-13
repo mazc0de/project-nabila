@@ -16,9 +16,9 @@ const LanguageFeatures = () => {
           return (
             <div
               key={item?.id}
-              className="even:bg-light-mustard-yellow odd:bg-peach-pink mx-3 flex aspect-square min-h-[230px] min-w-[230px] flex-col rounded-xl p-5 first:ml-0 last:mr-0 lg:max-h-[230px] lg:max-w-[230px]"
+              className="mx-3 flex aspect-square min-h-[230px] min-w-[230px] flex-col rounded-xl p-5 first:ml-0 last:mr-0 odd:bg-peach-pink even:bg-light-mustard-yellow lg:max-h-[230px] lg:max-w-[230px]"
             >
-              <div className="">
+              <div className="mb-2">
                 <p className="text-center font-moreSugar text-xl font-bold">
                   {item?.title}
                 </p>
