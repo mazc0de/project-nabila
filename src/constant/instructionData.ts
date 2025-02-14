@@ -34,7 +34,7 @@ export const instructionData = [
   },
   {
     id: 7,
-    imageUrl: images.QUIZ_BUTTON,
+    imageUrl: images.TEST_BUTTON,
     title: "Pre-test & Post-test",
   },
 ];
