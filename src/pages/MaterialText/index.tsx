@@ -45,7 +45,7 @@ const MaterialText = () => {
             <img
               src={data?.imageUrl}
               alt=""
-              className="mx-auto mb-5 w-44 rounded-lg"
+              className={`mx-auto mb-5 rounded-lg ${data?.id === 5 || data?.id === 6 ? "w-60 lg:w-80" : "w-44"}`}
             />
             <p className="text-center font-moreSugar text-xl font-bold">
               Identification
