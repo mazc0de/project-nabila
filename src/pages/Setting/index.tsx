@@ -4,13 +4,13 @@ import { headerMenu } from "@/constant/headerMenu";
 const Setting = () => {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center bg-cover bg-center p-5">
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex w-full justify-between lg:flex-row lg:justify-center">
         {headerMenu.map((item: any) => {
           return (
             <NavLink to={item.link}>
               {({ isActive }) => (
                 <div
-                  className={`shadow-card__material-definition my-2 flex h-10 w-[150px] items-center justify-center rounded-lg p-1 lg:mx-3 lg:my-0 lg:h-auto lg:p-3 ${isActive ? "bg-[#f2d260]" : "bg-[#FFF1BF]"}`}
+                  className={`shadow-card__material-definition my-2 flex h-10 w-24 items-center justify-center rounded-lg p-1 lg:mx-3 lg:my-0 lg:h-auto lg:w-[150px] lg:p-3 ${isActive ? "bg-[#f2d260]" : "bg-[#FFF1BF]"}`}
                 >
                   <p
                     className={`text-center font-moreSugar text-sm lg:text-base ${isActive && "font-bold"}`}
