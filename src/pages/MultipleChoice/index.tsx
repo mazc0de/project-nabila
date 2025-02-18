@@ -23,6 +23,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { images } from "@/constant/images";
 
 const MultipleChoice = () => {
   const { id } = useParams();
@@ -76,10 +77,29 @@ const MultipleChoice = () => {
         Number(id) === 9 ||
         Number(id) === 20 ? (
           <div className="shadow-card__generic-structure w-full rounded-lg bg-off-white-100 p-3">
+            {(Number(id) === 9 || Number(id) === 20) && question?.imageUrl && (
+              <div className="flex w-full justify-center">
+                <img
+                  src={question.imageUrl}
+                  alt={id}
+                  className="w-36 rounded-lg"
+                />
+              </div>
+            )}
+
             <p className="font-moreSugar text-sm lg:text-lg">
               <span className="font-bold">{question?.questionId}.</span>{" "}
               {question?.questionText}
             </p>
+            {question?.imageUrl && Number(id) === 5 && (
+              <div className="flex w-full justify-center">
+                <img
+                  src={question?.imageUrl}
+                  alt={String(question.questionId)}
+                  className="w-36 rounded-lg"
+                />
+              </div>
+            )}
             {question?.descriptionText?.length !== 0 && (
               <p className="font-moreSugar text-sm lg:text-lg">
                 {question?.descriptionText}
@@ -165,6 +185,15 @@ const MultipleChoice = () => {
               <p className="text-center font-moreSugar text-sm font-bold lg:text-lg">
                 {question6to8?.title}
               </p>
+              {question6to8?.imageUrl && (
+                <div className="flex w-full justify-center">
+                  <img
+                    src={question6to8?.imageUrl}
+                    alt={question6to8.title}
+                    className="w-32 rounded-lg lg:w-48"
+                  />
+                </div>
+              )}
               <div className="overflow-scroll">
                 {Object.entries(question6to8?.paragraph || {}).map(
                   ([key, value]) => (
@@ -250,6 +279,13 @@ const MultipleChoice = () => {
               <p className="font-moreSugar text-sm font-bold lg:text-lg">
                 Look at the following text to answer questions 10-11!
               </p>
+              <div className="flex w-full justify-center">
+                <img
+                  src={images.HAMSTER}
+                  alt="hamster-image"
+                  className="w-32 rounded-lg lg:w-48"
+                />
+              </div>
               <div className="overflow-scroll">
                 <p className="indent-5 font-moreSugar text-sm lg:text-lg">
                   {question10to11}
@@ -333,6 +369,13 @@ const MultipleChoice = () => {
               <p className="font-moreSugar text-sm font-bold lg:text-lg">
                 Look at the following text to answer questions 10-11!
               </p>
+              <div className="flex w-full justify-center">
+                <img
+                  src={images.HAMSTER}
+                  alt="hamster-image"
+                  className="w-32 rounded-lg lg:w-48"
+                />
+              </div>
               <div className="overflow-scroll">
                 <p className="indent-5 font-moreSugar text-sm lg:text-lg">
                   {question10to11}
@@ -341,9 +384,9 @@ const MultipleChoice = () => {
             </div>
             <div className="shadow-card__generic-structure mt-2 h-auto w-full overflow-scroll rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm lg:text-lg">
-                <span className="font-bold">{question?.questionId}. </span>“
+                <span className="font-bold">{question?.questionId}. </span>"
                 <span className="underline">Inadequate</span> conditions can not
-                only cause stress but also affect their growth.”,
+                only cause stress but also affect their growth.",
               </p>
               {question?.descriptionText?.length !== 0 && (
                 <p className="font-moreSugar text-sm lg:text-lg">
@@ -535,9 +578,9 @@ const MultipleChoice = () => {
             <div className="shadow-card__generic-structure mt-2 h-auto w-full overflow-scroll rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm lg:text-lg">
                 <span className="font-bold">{question?.questionId}. </span>
-                “He dries each finger{" "}
+                "He dries each finger{" "}
                 <span className="underline">separately</span>
-                ...”
+                ..."
               </p>
               {question?.descriptionText?.length !== 0 && (
                 <p className="font-moreSugar text-sm lg:text-lg">
@@ -611,6 +654,13 @@ const MultipleChoice = () => {
               <p className="font-moreSugar text-sm font-bold lg:text-lg">
                 Look at the following text to answer questions 15-16!
               </p>
+              <div className="flex w-full justify-center">
+                <img
+                  src={images.LUCY}
+                  alt="lucy-image"
+                  className="w-28 rounded-lg lg:w-36"
+                />
+              </div>
               <div className="overflow-scroll">
                 <p className="indent-5 font-moreSugar text-sm lg:text-lg">
                   {question15to16}
@@ -694,6 +744,13 @@ const MultipleChoice = () => {
               <p className="font-moreSugar text-sm font-bold lg:text-lg">
                 Look at the following text to answer questions 15-16!
               </p>
+              <div className="flex w-full justify-center">
+                <img
+                  src={images.LUCY}
+                  alt="lucy-image"
+                  className="w-28 rounded-lg lg:w-36"
+                />
+              </div>
               <div className="overflow-scroll">
                 <p className="indent-5 font-moreSugar text-sm lg:text-lg">
                   {question15to16}
@@ -702,10 +759,10 @@ const MultipleChoice = () => {
             </div>
             <div className="shadow-card__generic-structure mt-2 h-auto w-full overflow-scroll rounded-lg bg-off-white-100 p-3">
               <p className="font-moreSugar text-sm lg:text-lg">
-                <span className="font-bold">{question?.questionId}. </span>“She{" "}
+                <span className="font-bold">{question?.questionId}. </span>"She{" "}
                 <span className="underline">loathe</span> spider because her
                 brother once pranked her by putting a spider in her skirt when
-                she was a kid.”
+                she was a kid."
               </p>
               {question?.descriptionText?.length !== 0 && (
                 <p className="font-moreSugar text-sm lg:text-lg">
@@ -779,6 +836,13 @@ const MultipleChoice = () => {
               <p className="font-moreSugar text-sm font-bold lg:text-lg">
                 Look at the following text to answer questions 17-19!
               </p>
+              <div className="flex w-full justify-center">
+                <img
+                  src={images.MONAS}
+                  alt="monas-image"
+                  className="w-36 rounded-lg lg:w-48"
+                />
+              </div>
               <div className="overflow-scroll">
                 <p className="indent-5 font-moreSugar text-sm lg:text-lg">
                   {question17to19}

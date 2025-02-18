@@ -1,3 +1,4 @@
+import { images } from "@/constant/images";
 import { QuestionType } from "../../types";
 
 export const multipleChoiceQuestion: QuestionType[] = [
@@ -117,8 +118,7 @@ export const multipleChoiceQuestion: QuestionType[] = [
   {
     questionId: "5",
     questionText: "What is the main topic of this descriptive text?",
-    descriptionText:
-      "“Mount Everest, the highest mountain on Earth, rises to an elevation of 8,848.86 meters (29,031.7 feet) above sea level. It is located in the Himalayas, straddling the border between Nepal and the Tibet Autonomous Region of China.”",
+    descriptionText: `"Mount Everest, the highest mountain on Earth, rises to an elevation of 8,848.86 meters (29,031.7 feet) above sea level. It is located in the Himalayas, straddling the border between Nepal and the Tibet Autonomous Region of China."`,
     options: [
       {
         id: "A",
@@ -142,6 +142,7 @@ export const multipleChoiceQuestion: QuestionType[] = [
       },
     ],
     correctAnswer: "D",
+    imageUrl: images.MOUNT_EVEREST,
   },
   {
     questionId: "6",
@@ -229,9 +230,8 @@ export const multipleChoiceQuestion: QuestionType[] = [
   },
   {
     questionId: "9",
-    questionText:
-      "“Jerome Polin is a famous YouTuber from Indonesia. Jerome Polin was born in Surabaya on May 2, 1998. Jerome is nicknamed a mathematician because of his achievements in solving math problems in a short time. In addition, Jerome often shares his content with his friends “Waseda Boys” about life in Japan while he was studying at Waseda University. Jerome Polin has a kind, open, and sociable personality.”",
-    descriptionText: "Who is described in the sentence above?",
+    questionText: `"Jerome Polin is a famous YouTuber from Indonesia. Jerome Polin was born in Surabaya on May 2, 1998. Jerome is nicknamed a mathematician because of his achievements in solving math problems in a short time. In addition, Jerome often shares his content with his friends "Waseda Boys" about life in Japan while he was studying at Waseda University. Jerome Polin has a kind, open, and sociable personality."`,
+    descriptionText: `Who is described in the sentence above?`,
     options: [
       {
         id: "A",
@@ -255,6 +255,7 @@ export const multipleChoiceQuestion: QuestionType[] = [
       },
     ],
     correctAnswer: "B",
+    imageUrl: images.JEROME_POLIN,
   },
   {
     questionId: "10",
@@ -512,7 +513,7 @@ export const multipleChoiceQuestion: QuestionType[] = [
   },
   {
     questionId: "19",
-    questionText: `What does “Monas” stand for...`,
+    questionText: `What does "Monas" stand for...`,
     descriptionText: "",
     options: [
       {
@@ -565,5 +566,6 @@ export const multipleChoiceQuestion: QuestionType[] = [
       },
     ],
     correctAnswer: "C",
+    imageUrl: images.POSTMAN,
   },
 ];

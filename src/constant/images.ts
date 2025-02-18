@@ -19,8 +19,22 @@ import PRAMBANAN_TEMPLE from "../assets/images/prambanan-temple.jpg";
 import MY_PRETTY_SCHOOL_BAG from "../assets/images/my-pretty-school-bag.jpg";
 import MY_FAVORITE_MUG from "../assets/images/my-favorite-mug.jpg";
 import SHAFA_ALYANABILA from "../assets/images/shafa-alyanabila.png";
+import MOUNT_EVEREST from "../assets/images/mount-everest.jpg";
+import HONAI_PAPUA from "../assets/images/honai-papua.jpg";
+import JEROME_POLIN from "../assets/images/jerome-polin.jpg";
+import HAMSTER from "../assets/images/hamster.jpg";
+import LUCY from "../assets/images/lucy.jpg";
+import MONAS from "../assets/images/monas.jpg";
+import POSTMAN from "../assets/images/postman.jpg";
 
 export const images = {
+  POSTMAN,
+  MONAS,
+  LUCY,
+  HAMSTER,
+  JEROME_POLIN,
+  HONAI_PAPUA,
+  MOUNT_EVEREST,
   SHAFA_ALYANABILA,
   MY_LOVELY_MOM,
   STEVE_LOGO,
