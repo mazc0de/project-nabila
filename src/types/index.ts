@@ -8,6 +8,7 @@ export type QuestionType = {
   descriptionText: string | undefined | null;
   options: OptionType[];
   correctAnswer: string;
+  imageUrl?: string;
 };
 
 export type PapuaWoodenHousesParagraphType = {
@@ -20,6 +21,7 @@ export type PapuaWoodenHousesParagraphType = {
 export type PapuaWoodenHousesType = {
   title: string;
   paragraph: PapuaWoodenHousesParagraphType;
+  imageUrl?: string;
 };
 
 export type UserAnswerType = {
@@ -44,4 +46,8 @@ export type UserType = {
   name: string;
   multipleChoiceValue: number;
   TrueOrFalseValue: number;
+  studentId: string;
+  bio: string;
+  instagramUsername: string;
+  email: string;
 };

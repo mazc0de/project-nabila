@@ -13,14 +13,18 @@ import {
   MainMenu,
   Material,
   MultipleChoice,
-  MyLovelyCat,
-  PrambananTemple,
   QuizMenu,
   TrueOrFalse,
   TrueOrFalseQuiz,
   WelcomePage,
   MultipleChoiceResult,
   TrueOrFalseResult,
+  Setting,
+  Profile,
+  Instruction,
+  Source,
+  MaterialText,
+  Test,
 } from "./pages";
 
 import store, { persistor } from "./redux/store";
@@ -34,6 +38,11 @@ createRoot(document.getElementById("root")!).render(
             <Route element={<Layout />}>
               <Route path="/" element={<WelcomePage />} />
               <Route path="/main-menu" element={<MainMenu />} />
+              <Route path="/setting" element={<Setting />}>
+                <Route path="/setting/profile" element={<Profile />} />
+                <Route path="/setting/instruction" element={<Instruction />} />
+                <Route path="/setting/source" element={<Source />} />
+              </Route>
               <Route path="/material-definition" element={<Material />} />
               <Route
                 path="/material-definition/generic-structure"
@@ -43,33 +52,29 @@ createRoot(document.getElementById("root")!).render(
                 path="/material-definition/language-features"
                 element={<LanguageFeatures />}
               />
+              <Route path="/material">
+                <Route path="/material/:id" element={<MaterialText />} />
+              </Route>
+              <Route path="/quiz-menu" element={<QuizMenu />} />
               <Route
-                path="/material-definition/prambanan-temple"
-                element={<PrambananTemple />}
+                path="/quiz/multiple-choice/:id"
+                element={<MultipleChoice />}
               />
               <Route
-                path="/material-definition/my-lovely-cat"
-                element={<MyLovelyCat />}
+                path="/quiz/multiple-choice/result"
+                element={<MultipleChoiceResult />}
               />
+              <Route path="/quiz/true-or-false" element={<TrueOrFalse />} />
+              <Route
+                path="/quiz/true-or-false/:id"
+                element={<TrueOrFalseQuiz />}
+              />
+              <Route
+                path="/quiz/true-or-false/result"
+                element={<TrueOrFalseResult />}
+              />
+              <Route path="/test" element={<Test />} />
             </Route>
-            <Route path="/quiz-menu" element={<QuizMenu />} />
-            <Route
-              path="/quiz/multiple-choice/:id"
-              element={<MultipleChoice />}
-            />
-            <Route
-              path="/quiz/multiple-choice/result"
-              element={<MultipleChoiceResult />}
-            />
-            <Route path="/quiz/true-or-false" element={<TrueOrFalse />} />
-            <Route
-              path="/quiz/true-or-false/:id"
-              element={<TrueOrFalseQuiz />}
-            />
-            <Route
-              path="/quiz/true-or-false/result"
-              element={<TrueOrFalseResult />}
-            />
           </Routes>
         </BrowserRouter>
       </PersistGate>

@@ -1,34 +1,30 @@
 import { Link } from "react-router-dom";
 import { icons } from "../../../constant/icons";
-import { data } from "./data";
+import { languageFeaturesData } from "@/constant/languageFeaturesData";
+import ROUTES from "@/constant/routes";
 
 const LanguageFeatures = () => {
   return (
-    <div className="flex h-screen w-full flex-col gap-3 bg-language-features bg-cover bg-bottom px-10 py-5">
-      <div className="flex h-10 items-center justify-between">
-        <Link to="/main-menu">
-          <img src={icons.BUTTON_HOME} alt="home-button" className="h-9 w-10" />
-        </Link>
-        <div className="flex-grow">
-          <p className="text-center font-moreSugar text-2xl font-bold">
-            Language Features
-          </p>
-        </div>
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-cover bg-center p-5">
+      <div>
+        <p className="text-center font-moreSugar text-3xl font-bold">
+          Language Features
+        </p>
       </div>
-      <div className="flex justify-between gap-3">
-        {data?.map((item: any, index: number) => {
+      <div className="mt-5 flex w-full overflow-x-scroll lg:w-[992px]">
+        {languageFeaturesData.map((item: any) => {
           return (
             <div
-              key={index}
-              className="flex aspect-square w-44 flex-col gap-5 rounded-2xl p-5 odd:bg-[#FACCC2] even:bg-[#FEEDAA]"
+              key={item?.id}
+              className="mx-3 flex aspect-square min-h-[230px] min-w-[230px] flex-col rounded-xl p-5 first:ml-0 last:mr-0 odd:bg-peach-pink even:bg-light-mustard-yellow lg:max-h-[230px] lg:max-w-[230px]"
             >
-              <div>
-                <p className="text-center font-moreSugar text-lg font-bold">
+              <div className="mb-2">
+                <p className="text-center font-moreSugar text-xl font-bold">
                   {item?.title}
                 </p>
               </div>
               <div className="rounded-xl bg-off-white-100 p-2">
-                <p className="text-center font-moreSugar text-sm">
+                <p className="text-center font-moreSugar text-lg">
                   {item?.description}
                 </p>
               </div>
@@ -36,21 +32,25 @@ const LanguageFeatures = () => {
           );
         })}
       </div>
-      <div className="flex justify-center gap-5">
-        <Link to="/material-definition/generic-structure">
-          <img
-            src={icons.BUTTON_PREV}
-            alt="prev-button"
-            className="active: button-effect-clicked h-[40px] w-[115px]"
-          />
-        </Link>
-        <Link to="/material-definition/prambanan-temple">
-          <img
-            src={icons.BUTTON_NEXT}
-            alt="next-button"
-            className="button-effect-clicked h-[40px] w-[115px]"
-          />
-        </Link>
+      <div className="mt-5 flex justify-center">
+        <div className="mr-1">
+          <Link to={ROUTES.GENERIC_STRUCTURE}>
+            <img
+              src={icons.BUTTON_PREV}
+              alt="next-button"
+              className="button-effect-clicked h-[55px] w-[150px]"
+            />
+          </Link>
+        </div>
+        <div className="ml-1">
+          <Link to={ROUTES.MATERIAL_TEXT_1}>
+            <img
+              src={icons.BUTTON_NEXT}
+              alt="next-button"
+              className="button-effect-clicked h-[55px] w-[150px]"
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );

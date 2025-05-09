@@ -42,6 +42,10 @@ module.exports = {
                 'soft-cyan': '#84DCE0',
                 'blush-pink': '#FFD2D6',
                 'peach-orange': '#FED38E',
+                'vanilla-cream': '#FFF1BF',
+                'light-mustard-yellow': '#FEEDAA',
+                'peach-pink': '#FACCC2',
+                'crimson-red': '#C00028',
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 card: {

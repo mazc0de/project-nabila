@@ -18,13 +18,14 @@ import { saveUser } from "@/redux/reducer/userSlice";
 
 import { icons } from "../../constant/icons";
 import { images } from "../../constant/images";
-import { Navbar } from "@/components";
+import ROUTES from "@/constant/routes";
 
 const WelcomePage = () => {
   const dispatch = useDispatch();
   const user = useAppSelector((state) => state.user);
 
   const [openDialog, setOpenDialog] = useState<boolean>(false);
+
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleForm = (e: any) => {
@@ -42,7 +43,7 @@ const WelcomePage = () => {
   };
 
   useEffect(() => {
-    if (user?.name?.length !== 0) {
+    if (user?.name !== "") {
       setOpenDialog(false);
     } else {
       setOpenDialog(true);
@@ -50,7 +51,37 @@ const WelcomePage = () => {
   }, [user]);
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center bg-welcome-page bg-cover bg-top p-5 tablet:justify-center laptop:justify-start laptop:bg-center">
+    <>
+      <div className="relative flex h-screen w-full flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src={images.STEVE_LOGO}
+            alt="star-logo"
+            className="bounce-image w-80 lg:w-[550px]"
+          />
+          <div className="mt-5 w-60 font-bold lg:w-full">
+            <p className="text-center font-moreSugar lg:text-2xl">
+              Study Tools to Enhance Understanding Descriptive Text
+            </p>
+          </div>
+        </div>
+        <Link to={ROUTES.MAIN_MENU}>
+          <img
+            src={icons.BUTTON_PLAY}
+            alt="play-button-icon"
+            className="w-44 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 lg:w-52"
+          />
+        </Link>
+        <div className="absolute bottom-8 right-8 lg:bottom-14 lg:right-14">
+          <Link to={ROUTES.PROFILE}>
+            <img
+              src={icons.INFO}
+              alt="play-button-icon"
+              className="w-14 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 lg:w-20"
+            />
+          </Link>
+        </div>
+      </div>
       <Dialog open={openDialog}>
         <DialogContent className="shadow-card__generic-structure w-full bg-off-white-100 [&>button]:hidden">
           <DialogHeader className="">
@@ -75,25 +106,7 @@ const WelcomePage = () => {
           </DialogHeader>
         </DialogContent>
       </Dialog>
-
-      <Navbar />
-      <div className="flex h-full w-full flex-col items-center justify-center">
-        <div className="mt-4">
-          <img
-            src={images.STAR_LOGO}
-            alt="star-logo"
-            className="bounce-image w-96 tablet:w-[450px] laptop:w-[550px]"
-          />
-        </div>
-        <Link to="/main-menu">
-          <img
-            src={icons.BUTTON_PLAY}
-            alt="play-button-icon"
-            className="w-32 cursor-pointer duration-300 ease-in-out hover:scale-110 active:opacity-50 tablet:w-44 laptop:w-60"
-          />
-        </Link>
-      </div>
-    </div>
+    </>
   );
 };
 

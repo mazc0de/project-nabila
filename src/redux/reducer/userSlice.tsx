@@ -7,6 +7,10 @@ const initialState: UserType = {
   name: "",
   multipleChoiceValue: 0,
   TrueOrFalseValue: 0,
+  studentId: "",
+  bio: "",
+  instagramUsername: "",
+  email: "",
 };
 
 export const userSlice = createSlice({
@@ -17,6 +21,10 @@ export const userSlice = createSlice({
       state.name = action.payload.name;
       state.multipleChoiceValue = action.payload.multipleChoiceValue;
       state.TrueOrFalseValue = action.payload.TrueOrFalseValue;
+      state.studentId = action.payload.studentId;
+      state.bio = action.payload.bio;
+      state.instagramUsername = action.payload.instagramUsername;
+      state.email = action.payload.email;
     },
     removeUser: () => {
       return initialState;

@@ -1,8 +1,13 @@
-import { Outlet } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import ROUTES from "@/constant/routes";
+import Navbar from "../Navbar";
 
 const Layout = () => {
+  const { pathname } = useLocation();
+
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [bgImage, setBgImage] = useState<string>("");
 
   useEffect(() => {
     const playAudio = () => {
@@ -23,21 +28,46 @@ const Layout = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (pathname === ROUTES.HOME) {
+      setBgImage("bg-welcome-page");
+    } else if (pathname === ROUTES.MAIN_MENU) {
+      setBgImage("bg-main-menu");
+    } else if (pathname === ROUTES.MATERIAL_DEFINITION) {
+      setBgImage("bg-material-definition");
+    } else if (pathname === ROUTES.GENERIC_STRUCTURE) {
+      setBgImage("bg-generic-structure");
+    } else if (pathname === ROUTES.LANGUAGE_FEATURES) {
+      setBgImage("bg-language-features");
+    } else if (pathname === ROUTES.QUIZ) {
+      setBgImage("bg-quiz-menu");
+    } else if (pathname === ROUTES.TEST) {
+      setBgImage("bg-quiz-menu");
+    } else if (/^\/material\/[^/]+$/.test(pathname)) {
+      setBgImage("bg-language-features");
+    } else if (/^\/setting\/[^/]+$/.test(pathname)) {
+      setBgImage("bg-material-definition");
+    } else if (/^\/quiz\/multiple-choice\/[\w-]+$/.test(pathname)) {
+      setBgImage("bg-material-definition");
+    } else if (pathname === ROUTES.TRUE_OR_FALSE) {
+      setBgImage("bg-material-definition");
+    } else if (pathname === ROUTES.TRUE_OR_FALSE_RESULT) {
+      setBgImage("bg-material-definition");
+    } else if (/^\/quiz\/true-or-false\/[\w-]+$/.test(pathname)) {
+      setBgImage("bg-material-definition");
+    }
+  }, [location.pathname]);
+
   return (
     <>
       <audio ref={audioRef} src="/backsound.mp3" loop className="hidden">
         Your browser does not support the audio element.
       </audio>
 
-      <div className="flex h-screen w-full flex-col items-center justify-center bg-black tablet:hidden">
-        <div className="phone"></div>
-        <div className="mt-10">
-          <p className="mx-14 text-center text-white">
-            Please rotate your device or use a laptop for a better experience!
-          </p>
-        </div>
-      </div>
-      <div className="hidden tablet:block">
+      <div
+        className={`${bgImage} flex h-screen w-full flex-col bg-cover bg-center`}
+      >
+        <Navbar />
         <Outlet />
       </div>
     </>
